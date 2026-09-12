@@ -62,12 +62,12 @@ export function DonationModal({
     ? (language === 'hi' ? matchedNgo.hindiTitle : matchedNgo.title)
     : (language === 'hi' ? 'पावन मंदिर निर्माण सेवा' : 'Mandir Nirman Seva');
 
-  // Dynamic UPI Payment URL following NPCI standard
+  // Dynamic UPI Payment URL following NPCI standard with verified Merchant parameters
   const upiUrl = `upi://pay?pa=${SITE_CONFIG.payment.upiId}&pn=${encodeURIComponent(
-    'SHREE TRINETRA MAHAKAL MANDIR TRUST'
-  )}&am=${amount || 0}&cu=INR&tn=${encodeURIComponent(
+    SITE_CONFIG.payment.accountName
+  )}&mc=${SITE_CONFIG.payment.merchantCode || '8661'}&am=${amount || 0}&cu=INR&tn=${encodeURIComponent(
     `Mandir Seva - ${currentSevaTitle.slice(0, 25)}`
-  )}`;
+  )}&mode=02`;
 
   // Pure SVG QR Vector generation
   const qrSvg = useMemo(() => {
@@ -472,41 +472,29 @@ and supreme prosperity upon your family.
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
-                    {/* Left: Dynamic High-Resolution Vector QR Code */}
+                    {/* Left: Official Verified Merchant QR Code */}
                     <div className="sm:col-span-5 flex flex-col items-center justify-center p-3.5 bg-white rounded-xl shadow-lg relative group">
-                      {qrSvg ? (
-                        <div className="relative flex flex-col items-center">
-                          <svg
-                            viewBox={`-2 -2 ${qrSvg.size + 4} ${qrSvg.size + 4}`}
-                            className="w-40 h-40 sm:w-44 sm:h-44 object-contain"
-                            shapeRendering="crispEdges"
-                          >
-                            <rect
-                              x="-2"
-                              y="-2"
-                              width={qrSvg.size + 4}
-                              height={qrSvg.size + 4}
-                              fill="#FFFFFF"
-                            />
-                            <path d={qrSvg.path} fill="#0D0F12" />
-                          </svg>
-                          {/* Centered Micro Seal */}
-                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border border-[#D4AF37] flex items-center justify-center text-sm shadow-xs pointer-events-none">
-                            🔱
-                          </div>
+                      <div className="relative flex flex-col items-center">
+                        <img
+                          src={SITE_CONFIG.payment.qrImagePath || '/trinetra-payment-qr.png'}
+                          alt={`Official Merchant UPI QR Code for ${SITE_CONFIG.payment.accountName}`}
+                          className="w-40 h-40 sm:w-44 sm:h-44 object-contain rounded-md"
+                        />
+                        {/* Centered Micro Seal */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border border-[#D4AF37] flex items-center justify-center text-sm shadow-xs pointer-events-none">
+                          🔱
                         </div>
-                      ) : (
-                        <div className="w-40 h-40 flex items-center justify-center text-xs text-black font-semibold">
-                          Scan to Pay
-                        </div>
-                      )}
+                      </div>
 
                       <div className="w-full text-center mt-2 pt-1.5 border-t border-gray-200">
                         <span className="text-[11px] text-gray-900 font-bold block">
                           ₹{amount.toLocaleString('en-IN')}
                         </span>
                         <span className="text-[9px] text-gray-600 font-medium">
-                          GPay • PhonePe • Paytm • BHIM
+                          {SITE_CONFIG.payment.accountName}
+                        </span>
+                        <span className="text-[9px] text-emerald-700 font-semibold block">
+                          Verified PNB Merchant • 0% Fee
                         </span>
                       </div>
 
@@ -537,7 +525,9 @@ and supreme prosperity upon your family.
                       </div>
 
                       <div>
-                        <span className="text-[#A39E93] text-[11px] block mb-1">State Bank of India (SBI) Account:</span>
+                        <span className="text-[#A39E93] text-[11px] block mb-1">
+                          {SITE_CONFIG.payment.bankName} (PNB) Account:
+                        </span>
                         <div className="flex items-center justify-between font-mono font-bold text-[#F4F1EA] bg-[#141822] px-3 py-2 rounded-lg border border-white/15">
                           <span className="text-xs sm:text-sm">{SITE_CONFIG.payment.accountNumber}</span>
                           <button

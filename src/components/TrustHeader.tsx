@@ -43,10 +43,14 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
 
           <div className="flex items-center gap-1.5 font-medium">
             <span className="text-[#D4AF37] hidden sm:inline">
-              {language === 'hi' ? 'पंजीकृत धार्मिक ट्रस्ट:' : 'Registered Dharmic Trust:'}
+              {language === 'hi' ? 'पंजीकृत ट्रस्ट:' : 'Trust Reg:'}
             </span>
-            <span className="text-[#F4F1EA] truncate max-w-[200px] sm:max-w-none">
+            <span className="text-[#F4F1EA] truncate max-w-[160px] sm:max-w-none">
               {SITE_CONFIG.trust.registrationNo}
+            </span>
+            <span className="text-[#D4AF37]/50 hidden lg:inline">|</span>
+            <span className="text-[#A39E93] hidden lg:inline">
+              <span className="text-[#D4AF37]">Darpan ID:</span> {SITE_CONFIG.trust.nitiAayogDarpanId}
             </span>
             <span className="text-[#D4AF37]/50 hidden md:inline">|</span>
             <span className="text-[#34A853] hidden md:inline font-semibold">

@@ -76,8 +76,8 @@ if (fs.existsSync(versionTsPath)) {
 const agentsPath = path.join(rootDir, 'AGENTS.md');
 if (fs.existsSync(agentsPath)) {
   let content = fs.readFileSync(agentsPath, 'utf-8');
-  content = content.replace(/> \*\*Current Version:\*\*[^\n]+/, `> **Current Version:** \`v\${newVersion}\` (\${releaseTitle})  `);
-  content = content.replace(/> \*\*Last Updated:\*\*[^\n]+/, `> **Last Updated:** \`\${today}\``);
+  content = content.replace(/> \*\*Current Version:\*\*[^\n]+/, `> **Current Version:** \`v${newVersion}\` (${releaseTitle})  `);
+  content = content.replace(/> \*\*Last Updated:\*\*[^\n]+/, `> **Last Updated:** \`${today}\``);
   fs.writeFileSync(agentsPath, content, 'utf-8');
   console.log('  ✅ Updated AGENTS.md header badge');
 }

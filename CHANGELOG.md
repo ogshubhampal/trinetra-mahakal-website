@@ -5,6 +5,12 @@ Format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and 
 
 ---
 
+## [1.1.1] - 2026-09-12
+### Update NITI Aayog Darpan ID to UP/2024/0457283 and add sitesetting config alias
+- Feature updates, enhancements, and stability improvements.
+
+---
+
 ## [1.1.0] - 2026-09-12
 ### UI/UX Enhancements, Asymmetric Bento Grid & Phone Helpline Update
 - Feature updates, enhancements, and stability improvements.

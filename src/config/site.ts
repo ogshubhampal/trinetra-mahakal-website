@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
     registeredName: 'Trinetra Mahakal Dharmic & Charitable Trust',
     hindiRegisteredName: 'त्रिनेत्र महाकाल धार्मिक एवं जनकल्याण चैरिटेबल ट्रस्ट',
     registrationNo: 'REG/ND/TRUST/2024/78291',
-    nitiAayogDarpanId: 'DL/2024/0391824',
+    nitiAayogDarpanId: 'UP/2024/0457283',
     section80GNo: 'CIT(E)/80G/2024-25/DEL/99120',
     section12ANo: 'CIT(E)/12A/2024-25/DEL/44312',
     taxBenefitDescription: 'All donations are 50% tax exempt under Section 80G of the Indian Income Tax Act.',
@@ -43,13 +43,15 @@ export const SITE_CONFIG = {
 
   // Dual-Rail Payment Engine Configuration
   payment: {
-    upiId: 'trinetramahakal@sbi',
-    bankName: 'State Bank of India',
-    accountName: 'SHREE TRINETRA MAHAKAL MANDIR TRUST',
+    upiId: '7838959553m@pnb',
+    bankName: 'Punjab National Bank',
+    accountName: 'TRINETRA MAHAKAL TRUST',
     accountNumber: '419827364512',
-    ifscCode: 'SBIN0001234',
+    ifscCode: 'PUNB0123400',
     branch: 'Temple Sanctuary Branch',
     accountType: 'Current Account (Charitable Trust)',
+    merchantCode: '8661',
+    qrImagePath: '/trinetra-payment-qr.png',
   },
 
   // Construction Milestone Roadmap (From Neev to Shikhar)
@@ -204,3 +206,12 @@ export const SITE_CONFIG = {
     },
   ],
 };
+
+// Aliases for seamless imports across naming styles
+export const SITE_SETTINGS = SITE_CONFIG;
+export const siteSettings = SITE_CONFIG;
+export const siteConfig = SITE_CONFIG;
+
+export type SiteConfig = typeof SITE_CONFIG;
+export type SiteSettings = typeof SITE_CONFIG;
+
