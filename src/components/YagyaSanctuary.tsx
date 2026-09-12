@@ -8,6 +8,7 @@ interface YagyaSanctuaryProps {
 }
 
 export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
+  const [selectedCatId, setSelectedCatId] = useState('tantrik_badha');
   const [formData, setFormData] = useState({
     name: '',
     gotra: '',
@@ -18,26 +19,24 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const activeCategory = SITE_CONFIG.yagyaCategories.find((c) => c.id === selectedCatId)!;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate confidential submission to Acharya desk
     setIsSubmitted(true);
   };
 
+  const cleanPhone = SITE_CONFIG.contact.whatsappSeva.replace(/[^0-9]/g, '');
   const whatsappMessage = encodeURIComponent(
-    `Pranam Acharya Ji, I am reaching out from Trinetra Mahakal Sanctuary regarding Vedic Yagya consultation for spiritual obstacle / Tantrik Badha relief. Kindly guide me.`
+    `Pranam Acharya Ji, I am contacting Trinetra Mahakal Sanctuary regarding confidential Vedic Yagya consultation for Tantrik Badha / spiritual obstacle relief. Kindly guide me.`
   );
 
   return (
-    <section id="yagya" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0F12] border-b border-[#D4AF37]/20 relative">
+    <section id="yagya" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0F12] border-b border-[#D4AF37]/25 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+        {/* Header without repetitive pill */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161A22] border border-[#C83A22]/40 text-xs font-semibold text-[#E65C00] uppercase tracking-widest mb-3">
-            <span>🔥</span>
-            <span>{language === 'hi' ? 'वैदिक अग्नि एवं तंत्र बाधा शमन' : 'Sacred Agni & Badha Nivaran'}</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#F4F1EA] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#F4F1EA] tracking-tight mb-3">
             {language === 'hi'
               ? 'भगवान त्रिनेत्र महाकाल की पावन अग्नि से समस्त बाधाओं का निवारण'
               : 'Dissolution of Occult & Paranormal Afflictions Through Sacred Agni'}
@@ -49,59 +48,91 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
           </p>
         </div>
 
-        {/* 2-Column Split: Scriptural Insights Left, Confidential Intake Form Right */}
+        {/* 2-Column Split: Interactive Tabs Left, Confidential Intake Form Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: 3 Category Cards (7 Cols) */}
+          {/* Left Column (7 Cols): Tabbed Category Selector & Scriptural Details */}
           <div className="lg:col-span-7 space-y-6">
-            {SITE_CONFIG.yagyaCategories.map((cat) => (
-              <div
-                key={cat.id}
-                className="bg-[#161A22] rounded-xl border border-[#D4AF37]/25 p-6 hover:border-[#D4AF37]/60 transition-all shadow-md"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-mono font-bold text-[#D4AF37] uppercase tracking-wide">
-                    {cat.scripture}
-                  </span>
-                  <span className="text-xs text-[#E65C00] font-semibold">अग्नि शुद्धि</span>
-                </div>
-                <h3 className="text-lg font-bold text-[#F4F1EA] font-serif mb-2">
-                  {language === 'hi' ? cat.hindiTitle : cat.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#A39E93] leading-relaxed mb-4">{cat.description}</p>
-                <div className="flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
-                  <span>✓ {language === 'hi' ? 'गोत्र सहित वैयक्तिक संकल्प' : 'Personalized Gotra Sankalpa'}</span>
-                  <span>•</span>
-                  <span>✓ {language === 'hi' ? 'भस्म रक्षा कवच प्रेषण' : 'Protective Bhasma Dispatch'}</span>
-                </div>
-              </div>
-            ))}
+            {/* Category Tab Buttons */}
+            <div className="grid grid-cols-3 p-1.5 bg-[#161A22] rounded-xl border border-[#D4AF37]/30 gap-1.5">
+              {SITE_CONFIG.yagyaCategories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCatId(cat.id)}
+                  className={`py-2.5 px-3 rounded-lg text-xs font-semibold transition-all text-center leading-snug ${
+                    selectedCatId === cat.id
+                      ? 'bg-gradient-to-r from-[#C83A22] to-[#9E2010] text-white shadow-md border border-[#D4AF37]/50'
+                      : 'text-[#A39E93] hover:text-[#F4F1EA] hover:bg-[#1E232E]'
+                  }`}
+                >
+                  {cat.id === 'tantrik_badha'
+                    ? language === 'hi' ? 'तांत्रिक बाधा' : 'Tantrik Badha'
+                    : cat.id === 'paranormal'
+                    ? language === 'hi' ? 'प्रेत / दृष्टि दोष' : 'Paranormal / Nazar'
+                    : language === 'hi' ? 'ग्रह / पितृ दोष' : 'Graha / Pitra Shanti'}
+                </button>
+              ))}
+            </div>
 
-            {/* Direct Acharya Helpline Card */}
-            <div className="p-6 rounded-xl bg-gradient-to-r from-[#1B1214] to-[#161A22] border border-[#C83A22]/40 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <h4 className="text-base font-bold text-[#F4F1EA] mb-1">
-                  {language === 'hi' ? 'आचार्य जी से सीधे बात करें' : 'Speak Directly with an Initiated Acharya'}
-                </h4>
-                <p className="text-xs text-[#A39E93]">
-                  {language === 'hi'
-                    ? 'अति गंभीर अथवा तीव्र बाधा की स्थिति में सीधे 1-on-1 परामर्श प्राप्त करें।'
-                    : 'Confidential 1-on-1 spiritual consultation for severe paranormal or spiritual distress.'}
-                </p>
+            {/* Active Category Showcase Card */}
+            <div className="bg-stone-surface rounded-2xl border-2 border-[#D4AF37]/50 p-7 shadow-xl relative overflow-hidden">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-xs font-mono font-bold text-[#D4AF37] uppercase tracking-wider bg-[#0D0F12] px-3 py-1 rounded-full border border-white/10">
+                  📖 {activeCategory.scripture}
+                </span>
+                <span className="text-xs font-bold text-[#E65C00] bg-[#C83A22]/20 px-3 py-1 rounded-full border border-[#E65C00]/40">
+                  अग्नि संस्कार
+                </span>
               </div>
-              <a
-                href={`https://wa.me/${SITE_CONFIG.contact.whatsappSeva.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 px-5 py-2.5 rounded bg-[#046A38] hover:bg-[#03582E] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs"
-              >
-                <span>💬</span>
-                <span>WhatsApp Helpline</span>
-              </a>
+
+              <h3 className="text-xl font-bold font-serif text-[#F4F1EA] mb-3">
+                {language === 'hi' ? activeCategory.hindiTitle : activeCategory.title}
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#A39E93] leading-relaxed mb-6">
+                {activeCategory.description}
+              </p>
+
+              {/* Ritual Highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-xl bg-[#0D0F12] border border-white/10 text-xs mb-6">
+                <div className="flex items-center gap-2 text-[#D4AF37]">
+                  <span>✓</span>
+                  <span>{language === 'hi' ? 'गोत्र सहित वैयक्तिक आहुति' : 'Personalized Gotra Ahuti'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-[#D4AF37]">
+                  <span>✓</span>
+                  <span>{language === 'hi' ? 'महामृत्युंजय भस्म रक्षा कवच' : 'Mahamrityunjaya Bhasma Kavach'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-[#D4AF37]">
+                  <span>✓</span>
+                  <span>{language === 'hi' ? 'विशिष्ट वनौषधि एवं सर्षप हवन' : 'Special Herbal Samagri Havan'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-[#D4AF37]">
+                  <span>✓</span>
+                  <span>{language === 'hi' ? 'लाइव वीडियो दर्शन (यदि अनुपस्थित)' : 'Live Video Darshan Option'}</span>
+                </div>
+              </div>
+
+              {/* Direct Acharya WhatsApp CTA */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+                <div className="text-xs text-[#A39E93]">
+                  {language === 'hi' ? 'सीधे आचार्य परामर्श:' : 'Direct Acharya Helpline:'}{' '}
+                  <strong className="text-[#F4F1EA]">{SITE_CONFIG.contact.acharyaHelpline}</strong>
+                </div>
+                <a
+                  href={`https://wa.me/${cleanPhone}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-[#046A38] hover:bg-[#03582E] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-xs"
+                >
+                  <span>💬</span>
+                  <span>WhatsApp Acharya</span>
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Confidential Intake Form (5 Cols) */}
-          <div className="lg:col-span-5 bg-[#161A22] rounded-xl border border-[#D4AF37]/35 p-6 sm:p-7 shadow-xl">
+          {/* Right Column (5 Cols): Confidential Gotra Intake Form */}
+          <div className="lg:col-span-5 bg-stone-surface rounded-2xl border border-[#D4AF37]/40 p-6 sm:p-7 shadow-xl">
             <div className="mb-6">
               <span className="text-xs text-[#34A853] font-bold uppercase tracking-wider block mb-1">
                 🔒 {language === 'hi' ? 'शत-प्रतिशत गोपनीय परामर्श' : '100% Confidential Intake'}
@@ -112,20 +143,20 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
               <p className="text-xs text-[#A39E93] mt-1">
                 {language === 'hi'
                   ? 'अपना विवरण भरें। मंदिर के वरिष्ठ वैदिक आचार्य आपके गोत्र एवं कष्ट का अध्ययन कर मार्गदर्शन देंगे।'
-                  : 'Submit your birth details and nature of affliction. Senior Acharyas will review your case with complete privacy.'}
+                  : 'Submit your birth details and symptoms. Senior Acharyas will review your case with complete privacy.'}
               </p>
             </div>
 
             {isSubmitted ? (
-              <div className="p-6 rounded-lg bg-[#0D0F12] border border-[#34A853]/50 text-center">
+              <div className="p-6 rounded-xl bg-[#0D0F12] border border-[#34A853]/50 text-center">
                 <span className="text-3xl block mb-2">🙏</span>
                 <h4 className="text-base font-bold text-[#F4F1EA] mb-2">
                   {language === 'hi' ? 'संकल्प पत्र सफलतापूर्वक प्राप्त हुआ' : 'Inquiry Successfully Received'}
                 </h4>
                 <p className="text-xs text-[#A39E93] leading-relaxed mb-4">
                   {language === 'hi'
-                    ? 'आचार्य जी २४ घंटे के भीतर आपसे व्हाट्सएप/दूरभाष पर संपर्क कर यज्ञ तिथि एवं विधि सुनिश्चित करेंगे।'
-                    : 'The presiding Acharya will contact you within 24 hours on your WhatsApp to schedule the Vedic Sankalpa.'}
+                    ? `आचार्य जी २४ घंटे के भीतर आपसे ${formData.whatsapp || SITE_CONFIG.contact.acharyaHelpline} पर संपर्क कर मार्गदर्शन करेंगे।`
+                    : `The presiding Acharya will contact you within 24 hours on ${formData.whatsapp || 'WhatsApp'} to schedule the Vedic Sankalpa.`}
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -146,7 +177,7 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Rajesh Sharma"
-                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
@@ -160,8 +191,8 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
                       required
                       value={formData.gotra}
                       onChange={(e) => setFormData({ ...formData, gotra: e.target.value })}
-                      placeholder="e.g. Kashyap / Unknown"
-                      className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                      placeholder="e.g. Kashyap"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                   <div>
@@ -173,8 +204,8 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
                       required
                       value={formData.whatsapp}
                       onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                      placeholder="e.g. 9876543210"
-                      className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                      placeholder="e.g. 7838959553"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -186,12 +217,12 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D0F12] border border-white/15 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
                   >
                     <option value="tantrik_badha">Tantrik Badha / Occult Attack / Blockage</option>
-                    <option value="paranormal">Paranormal Distress / Fear / Evil Eye</option>
+                    <option value="paranormal">Paranormal Distress / Fear / Evil Eye (Nazar)</option>
                     <option value="graha_pitra_dosh">Graha Shanti / Kaalsarp / Pitra Dosh</option>
-                    <option value="general_health">Chronic Health / Family Peace</option>
+                    <option value="general_health">Chronic Stagnation / Family Peace</option>
                   </select>
                 </div>
 
@@ -209,7 +240,7 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
                         ? 'जैसे: निरंतर अकारण भय, व्यापार में रुकावट, घर में अशांति...'
                         : 'e.g. Unexplained sudden life stagnation, recurring nightmares, severe domestic discord...'
                     }
-                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
                   ></textarea>
                 </div>
 
@@ -219,7 +250,7 @@ export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded bg-gradient-to-r from-[#C83A22] to-[#9E2010] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
+                  className="w-full py-3 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#9E2010] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
                 >
                   {language === 'hi' ? 'गोपनीय संकल्प पत्र भेजें' : 'Submit Confidential Intake'}
                 </button>

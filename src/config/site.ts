@@ -34,9 +34,9 @@ export const SITE_CONFIG = {
 
   // Official Communication & Helpline Rails
   contact: {
-    acharyaHelpline: '+91 98765 43210',
-    whatsappSeva: '+91 98765 43210',
-    tollFreeTrust: '1800-890-3344',
+    acharyaHelpline: '+91 78389 59553',
+    whatsappSeva: '+91 78389 59553',
+    tollFreeTrust: '+91 78389 59553',
     officialEmail: 'seva@trinetramahakal.org',
     treasuryEmail: 'treasury@trinetramahakal.org',
   },

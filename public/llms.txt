@@ -1,12 +1,11 @@
-# Shri Trinetra Mahakal Mandir & Registered Charitable Trust
+# TRINETRA-MAHAKAL-WEBSITE — Application Overview
 
-> Digital sanctuary for Shri Trinetra Mahakal Mandir and its registered Dharmic NGO. Dedicated to sacred Mandir construction (from Neev to Shikhar), authentic Vedic Yagya & Anushthans for resolving Tantrik Badhas and paranormal afflictions, and transparent humanitarian seva including Anna Daan (Mahaprasad Bhandara), Granth Daan, and Shiksha Seva with 80G tax benefits.
+> Enterprise web platform and application suite built for scale and high performance. Designed following llmstxt.org standards for AI agents.
 
-## Sacred Offerings & Seva Wings
-- [Mandir Nirman Seva](/mandir-nirman): Micro-donations for temple construction including 1 Sacred Shila (₹1,100), 1 Bag Cement (₹350), 1 Sq. Ft. Sanctum Floor (₹2,100), and Yagyashala Pillar Seva with direct UPI QR & 80G receipts.
-- [Vedic Yagya & Badha Nivaran](/yagya-anushthan): Authentic scriptural remedies for Tantrik Badhas, psychic disturbances, and planetary afflictions conducted by initiated Vedic Acharyas with confidential consultation intake.
-- [Registered NGO Charity](/ngo-seva): Daily Anna Daan Mahaprasad Bhandara, free spiritual literature (Bhagavad Gita) distribution, and Shiksha Seva for underprivileged children.
-- [Sanctum Pilgrimage & Darshan](/contact): Mandir location, darshan timings, visiting guidelines, and 24/7 Acharya WhatsApp helpline.
+## Core Pages & Services
+- [Home](https://example.com/): Main portal and platform entry point.
+- [About](https://example.com/about): Mission, overview, and architectural foundations.
+- [Contact](https://example.com/contact): Official contact and support directory.
 
-## Full AI Knowledge Context
-- [Complete Context Repository](/llms-full.txt): Exhaustive scriptural, construction, and legal compliance context for AI search and RAG ingestion.
+## Full AI Knowledge Base Context
+- [Complete Knowledge Base for LLM Ingestion](https://example.com/llms-full.txt): Exhaustive textual repository containing product specs and documentation.

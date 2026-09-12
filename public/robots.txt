@@ -3,14 +3,12 @@
 # Controls Web Crawlers, Indexers & AI Browsing Agents
 # ==============================================================================
 
-# Search Engine Crawlers (Google, Bing, DuckDuckGo, Yahoo, etc.)
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /admin/*
 Disallow: /api/
 Disallow: /*/success
-Disallow: /checkout/success
 
 # OpenAI Search & ChatGPT Crawling
 User-agent: GPTBot

@@ -9,7 +9,7 @@ interface CivicFooterProps {
 
 export function CivicFooter({ language }: CivicFooterProps) {
   return (
-    <footer id="contact" className="bg-[#080A0D] border-t border-[#D4AF37]/25 text-[#A39E93] text-xs pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-[#080A0D] border-t border-[#D4AF37]/30 text-[#A39E93] text-xs pt-16 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
@@ -74,9 +74,14 @@ export function CivicFooter({ language }: CivicFooterProps) {
                 </a>
               </div>
               <div>
-                <span className="text-[#A39E93] block">Toll-Free Trust Desk:</span>
-                <a href={`tel:${SITE_CONFIG.contact.tollFreeTrust}`} className="text-[#D4AF37] font-semibold hover:underline">
-                  {SITE_CONFIG.contact.tollFreeTrust}
+                <span className="text-[#A39E93] block">WhatsApp Seva Desk:</span>
+                <a
+                  href={`https://wa.me/${SITE_CONFIG.contact.whatsappSeva.replace(/[^0-9]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#34A853] font-semibold hover:underline"
+                >
+                  {SITE_CONFIG.contact.whatsappSeva}
                 </a>
               </div>
               <div>

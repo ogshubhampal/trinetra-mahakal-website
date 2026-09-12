@@ -14,7 +14,6 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
 
   const toggleSacredAudio = () => {
     setIsPlayingAudio(!isPlayingAudio);
-    // Audio synthesizer simulation using Web Audio API for an authentic meditative temple drone
     if (typeof window !== 'undefined') {
       const audioCtx = (window as any)._sanctumAudioCtx || new (window.AudioContext || (window as any).webkitAudioContext)();
       (window as any)._sanctumAudioCtx = audioCtx;
@@ -44,33 +43,61 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
   );
 
   return (
-    <section className="relative min-h-[92dvh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 overflow-hidden bg-sanctum-gradient border-b border-[#D4AF37]/20">
-      {/* Sacred Subtle Agni & Smoke Background Particles */}
+    <section className="relative min-h-[94dvh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 overflow-hidden bg-sanctum-gradient border-b border-[#D4AF37]/25">
+      {/* Background Sacred Agni Atmosphere & Subtle Sparks */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C83A22]/10 rounded-full blur-[140px]"></div>
-        <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-[#D4AF37]/5 rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#C83A22]/12 rounded-full blur-[150px] animate-agni"></div>
+        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#D4AF37]/8 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        {/* Milestone Indicator Banner (GovTech Transparency) */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161A22] border border-[#D4AF37]/40 shadow-xs mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#046A38] animate-pulse"></span>
-          <span className="text-xs text-[#F4F1EA] font-medium tracking-wide">
-            {language === 'hi'
-              ? 'भूमि पूजन एवं नीव (आधार) पूर्ण — गर्भगृह निर्माण जारी'
-              : 'Bhumi Pujan & Neev Laid — Garbhagriha Construction Underway'}
-          </span>
-          <span className="text-[11px] bg-[#C83A22]/20 text-[#D4AF37] px-2 py-0.5 rounded-full font-bold">
-            Phase 3
-          </span>
+        {/* Sacred Visual Centerpiece: Consecrated Trinetra Mahakal Trishul & Third Eye */}
+        <div className="relative mb-6 group cursor-pointer" onClick={() => onOpenDonateModal('shila')}>
+          {/* Outer Radiant Brass Ring */}
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#12151D] border-2 border-[#D4AF37]/70 flex items-center justify-center shadow-2xl relative glow-gold group-hover:border-[#D4AF37] transition-all">
+            {/* Pulsating Fire Glow */}
+            <div className="absolute inset-2 rounded-full bg-gradient-to-t from-[#C83A22]/40 via-[#E65C00]/20 to-transparent blur-xs"></div>
+
+            {/* Sacred Trishul & Trinetra SVG Vector */}
+            <svg
+              className="w-14 h-14 sm:w-16 sm:h-16 text-[#D4AF37] relative z-10"
+              viewBox="0 0 100 100"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              {/* Central Trishul Prong */}
+              <path d="M50 12 L50 88" strokeLinecap="round" />
+              <polygon points="50,6 45,18 55,18" fill="#D4AF37" stroke="none" />
+              
+              {/* Left & Right Crescent Prongs */}
+              <path d="M30 22 C30 45 42 55 50 60 C58 55 70 45 70 22" strokeLinecap="round" />
+              <polygon points="30,16 26,26 34,26" fill="#D4AF37" stroke="none" />
+              <polygon points="70,16 66,26 74,26" fill="#D4AF37" stroke="none" />
+
+              {/* Damru Motif at Base */}
+              <polygon points="43,62 57,62 43,72 57,72" fill="#D4AF37" opacity="0.8" />
+
+              {/* Radiant Third Eye (Trinetra) */}
+              <ellipse cx="50" cy="38" rx="6" ry="10" fill="#C83A22" stroke="#D4AF37" strokeWidth="1.5" />
+              <ellipse cx="50" cy="38" rx="2" ry="5" fill="#F4F1EA" stroke="none" />
+            </svg>
+
+            {/* Micro Badge for Active Consecration */}
+            <span className="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-[#C83A22] text-white text-[10px] font-bold uppercase tracking-wider border border-[#D4AF37]/60 shadow-xs">
+              नीव प्रतिष्ठा
+            </span>
+          </div>
         </div>
 
-        {/* Sacred Sanskrit Shloka */}
+        {/* Sacred Sanskrit Shloka Header */}
         <div className="mb-4">
-          <p className="text-sm sm:text-base font-serif text-[#D4AF37] tracking-widest uppercase">
-            ॐ हौं जूँ सः भूर्भुवः स्वः त्र्यम्बकं यजामहे
-          </p>
-          <p className="text-xs text-[#A39E93] italic tracking-wider">
+          <div className="inline-flex items-center gap-2 text-xs font-serif text-[#D4AF37] tracking-widest uppercase">
+            <span>✧</span>
+            <span>ॐ हौं जूँ सः भूर्भुवः स्वः त्र्यम्बकं यजामहे</span>
+            <span>✧</span>
+          </div>
+          <p className="text-xs text-[#A39E93] italic tracking-wider mt-1">
             {language === 'hi'
               ? 'समस्त भय, तंत्र बाधा एवं काल दोष निवारक — भगवान त्रिनेत्र महाकाल'
               : 'The Supreme Three-Eyed Transcendent — Dissolver of Fear, Occult Bonds & Negativity'}
@@ -82,7 +109,7 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
           {language === 'hi' ? (
             <>
               श्री त्रिनेत्र महाकाल के पावन मंदिर निर्माण में{' '}
-              <span className="text-[#D4AF37] underline decoration-[#C83A22]/60 decoration-2 underline-offset-8">
+              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-8">
                 अपनी आधार शिला
               </span>{' '}
               समर्पित करें
@@ -90,7 +117,7 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
           ) : (
             <>
               Consecrate Your Sacred Shila in the Holy Sanctuary of{' '}
-              <span className="text-[#D4AF37] underline decoration-[#C83A22]/60 decoration-2 underline-offset-8">
+              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-8">
                 Bhagwan Trinetra Mahakal
               </span>
             </>
@@ -98,17 +125,17 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
         </h1>
 
         {/* Narrative Subtext */}
-        <p className="text-base sm:text-lg text-[#A39E93] max-w-2xl mx-auto leading-relaxed mb-8">
+        <p className="text-sm sm:text-base md:text-lg text-[#A39E93] max-w-2xl mx-auto leading-relaxed mb-8">
           {language === 'hi'
             ? 'पवित्र नीव स्थापित हो चुकी है। अब त्रिनेत्र महाकाल के भव्य गर्भगृह, वैदिक यज्ञशाला एवं निर्धनों के लिए नित्य अन्न क्षेत्र (भंडारे) के निर्माण में अपना पवित्र योगदान दें। धारा ८०जी के अंतर्गत शत-प्रतिशत कर छूट।'
             : 'The sacred foundation stone is consecrated. Join thousands of devotees in constructing the sanctum sanctorum, nine-fire Vedic Yagyashala, and daily sadhu bhandara. Verified 80G tax benefits with instant digital receipts.'}
         </p>
 
         {/* Primary Action Button Matrix */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-3.5 w-full sm:w-auto mb-12">
           <button
             onClick={() => onOpenDonateModal('shila')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-[#F4F1EA] font-bold text-sm tracking-wider uppercase border border-[#D4AF37]/50 shadow-md hover:shadow-[#C83A22]/30 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-[#F4F1EA] font-bold text-xs uppercase tracking-wider border border-[#D4AF37]/60 shadow-lg hover:shadow-[#C83A22]/30 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
           >
             <span>🪨</span>
             <span>{language === 'hi' ? 'शिला दान / निर्माण सहयोग' : 'Sponsor 1 Sacred Shila (₹1,100)'}</span>
@@ -116,43 +143,44 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
 
           <button
             onClick={onOpenYagyaModal}
-            className="w-full sm:w-auto px-6 py-3.5 rounded bg-[#161A22] hover:bg-[#1E232E] text-[#D4AF37] hover:text-white font-semibold text-sm tracking-wider uppercase border border-[#D4AF37]/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
+            className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#161A22] hover:bg-[#1E232E] text-[#D4AF37] hover:text-white font-semibold text-xs tracking-wider uppercase border border-[#D4AF37]/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
           >
             <span>🔥</span>
             <span>{language === 'hi' ? 'तांत्रिक बाधा परामर्श लें' : 'Consult Acharya for Yagya'}</span>
           </button>
 
-          {/* Ambient Chant Audio Toggle */}
+          {/* Ambient Chant Audio Toggle with Active Animation */}
           <button
             onClick={toggleSacredAudio}
-            className={`p-3.5 rounded-full border transition-all ${
+            className={`p-3.5 rounded-lg border transition-all flex items-center justify-center gap-1.5 ${
               isPlayingAudio
-                ? 'bg-[#C83A22] text-white border-[#D4AF37]'
+                ? 'bg-[#C83A22] text-white border-[#D4AF37] ring-2 ring-[#D4AF37]/40'
                 : 'bg-[#161A22] text-[#A39E93] hover:text-[#D4AF37] border-[#D4AF37]/30'
             }`}
             title={isPlayingAudio ? 'Mute Sacred Tone' : 'Play Sacred 108Hz Tone'}
             aria-label="Toggle Sacred Sound Ambiance"
           >
-            {isPlayingAudio ? '🔊' : '🔈'}
+            <span>{isPlayingAudio ? '🔊' : '🔈'}</span>
+            <span className="text-[11px] font-semibold">{isPlayingAudio ? '108Hz Active' : 'Chant Sound'}</span>
           </button>
         </div>
 
         {/* Transparent Construction Meter & Live Civic Counters */}
-        <div className="w-full max-w-3xl bg-[#161A22]/90 border border-[#D4AF37]/25 rounded-xl p-5 sm:p-6 backdrop-blur-sm shadow-xl">
+        <div className="w-full max-w-3xl bg-stone-surface border border-[#D4AF37]/30 rounded-xl p-5 sm:p-6 backdrop-blur-sm shadow-2xl">
           <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider mb-2">
             <span className="text-[#A39E93]">
               {language === 'hi' ? 'गर्भगृह निर्माण निधि संचयन:' : 'Garbhagriha Nirman Phase Progress:'}
             </span>
-            <span className="text-[#D4AF37]">
-              ₹{(SITE_CONFIG.construction.collectedAmount / 100000).toFixed(1)} Lakhs / ₹
-              {(SITE_CONFIG.construction.targetAmount / 100000).toFixed(0)} Lakhs ({percent}%)
+            <span className="text-[#D4AF37] font-mono">
+              ₹{(SITE_CONFIG.construction.collectedAmount / 100000).toFixed(1)}L / ₹
+              {(SITE_CONFIG.construction.targetAmount / 100000).toFixed(0)}L ({percent}%)
             </span>
           </div>
 
           {/* Progress Bar with Sacred Agni Glow */}
           <div className="w-full h-3 bg-[#0D0F12] rounded-full overflow-hidden border border-white/10 p-0.5 mb-5">
             <div
-              className="h-full bg-gradient-to-r from-[#C83A22] via-[#E65C00] to-[#D4AF37] rounded-full transition-all duration-1000"
+              className="h-full bg-gradient-to-r from-[#C83A22] via-[#E65C00] to-[#D4AF37] rounded-full transition-all duration-1000 shadow-sm"
               style={{ width: `${percent}%` }}
             ></div>
           </div>

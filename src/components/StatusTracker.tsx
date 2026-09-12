@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SITE_CONFIG } from '@/config/site';
 
 interface StatusTrackerProps {
   language: 'en' | 'hi';
@@ -19,18 +18,14 @@ export function StatusTracker({ language }: StatusTrackerProps) {
     setTimeout(() => {
       setIsLoading(false);
       setHasSearched(true);
-    }, 600);
+    }, 500);
   };
 
   return (
-    <section id="track" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0F12] border-b border-[#D4AF37]/20">
+    <section id="track" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0F12] border-b border-[#D4AF37]/25">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
+        {/* Header without redundant pill */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161A22] border border-[#34A853]/40 text-xs font-semibold text-[#34A853] uppercase tracking-widest mb-3">
-            <span>🔍</span>
-            <span>{language === 'hi' ? 'संकल्प एवं UTR स्थिति जांच' : 'Know Your Seva Status (UTR)'}</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#F4F1EA] tracking-tight mb-2">
             {language === 'hi' ? 'अपनी दान रसीद एवं शिला संकल्प की स्थिति जानें' : 'Track Your Donation & Sankalpa Status'}
           </h2>
@@ -58,7 +53,7 @@ export function StatusTracker({ language }: StatusTrackerProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-3 rounded-lg bg-[#046A38] hover:bg-[#03582E] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shrink-0"
+            className="px-6 py-3 rounded-lg bg-[#046A38] hover:bg-[#03582E] text-white font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 shrink-0 shadow-md active:scale-[0.98]"
           >
             {isLoading ? 'Checking...' : language === 'hi' ? 'स्थिति जांचें' : 'Check Status'}
           </button>
@@ -66,12 +61,12 @@ export function StatusTracker({ language }: StatusTrackerProps) {
 
         {/* Verification Result Card */}
         {hasSearched && (
-          <div className="bg-[#161A22] rounded-xl border border-[#34A853]/60 p-6 sm:p-7 shadow-xl animate-fadeIn">
+          <div className="bg-stone-surface rounded-2xl border border-[#34A853]/60 p-6 sm:p-7 shadow-2xl animate-fadeIn">
             <div className="flex flex-wrap justify-between items-center border-b border-white/10 pb-4 mb-4 gap-2">
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#34A853]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#34A853] animate-ping"></span>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#34A853]">
-                  {language === 'hi' ? 'सत्यापित एवं संकल्पित' : 'Verified & Consecrated'}
+                  ✓ {language === 'hi' ? 'सत्यापित एवं संकल्पित' : 'Verified & Consecrated'}
                 </span>
               </div>
               <span className="text-xs font-mono text-[#D4AF37]">
@@ -104,7 +99,7 @@ export function StatusTracker({ language }: StatusTrackerProps) {
               </span>
               <button
                 onClick={() => alert('Certificate downloaded with official Trust & 80G seal!')}
-                className="px-4 py-2 rounded bg-[#D4AF37] hover:bg-[#C29D29] text-black font-bold text-xs uppercase tracking-wider transition-all"
+                className="px-5 py-2.5 rounded-lg bg-[#D4AF37] hover:bg-[#C29D29] text-black font-bold text-xs uppercase tracking-wider transition-all shadow-xs"
               >
                 📥 Download Consecration Certificate
               </button>

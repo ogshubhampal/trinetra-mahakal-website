@@ -1,8 +1,8 @@
 # AGENTS.md - Project Intelligence & Technical Directives: Trinetra Mahakal
 
 > **Project**: Trinetra Mahakal Mandir & Registered Dharmic NGO Digital Sanctuary  
-> **Current Version:** `v1.0.0`  
-> **Last Updated:** `2026-09-09`  
+> **Current Version:** `v${newVersion}` (${releaseTitle})  
+> **Last Updated:** `${today}`
 > **Mission**: Sacred Mandir Construction, Vedic Yagya & Tantrik Badha Nivaran, and Humanitarian NGO Seva (Anna Daan, Granth Daan, Shiksha Seva).  
 > **Status**: Bhumi Pujan Completed | Neev (Foundation) Laid | Active Construction & Micro-Donation Phase  
 > **Design Vibe**: Ancient Sanctum & Sacred Agni (Basalt Granite `#0D0F12` + Temple Brass `#D4AF37` + Agni Vermillion `#C83A22`)  
