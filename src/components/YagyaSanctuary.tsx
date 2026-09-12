@@ -1,0 +1,233 @@
+'use client';
+
+import React, { useState } from 'react';
+import { SITE_CONFIG } from '@/config/site';
+
+interface YagyaSanctuaryProps {
+  language: 'en' | 'hi';
+}
+
+export function YagyaSanctuary({ language }: YagyaSanctuaryProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    gotra: '',
+    phone: '',
+    whatsapp: '',
+    category: 'tantrik_badha',
+    description: '',
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate confidential submission to Acharya desk
+    setIsSubmitted(true);
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    `Pranam Acharya Ji, I am reaching out from Trinetra Mahakal Sanctuary regarding Vedic Yagya consultation for spiritual obstacle / Tantrik Badha relief. Kindly guide me.`
+  );
+
+  return (
+    <section id="yagya" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0F12] border-b border-[#D4AF37]/20 relative">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161A22] border border-[#C83A22]/40 text-xs font-semibold text-[#E65C00] uppercase tracking-widest mb-3">
+            <span>🔥</span>
+            <span>{language === 'hi' ? 'वैदिक अग्नि एवं तंत्र बाधा शमन' : 'Sacred Agni & Badha Nivaran'}</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#F4F1EA] tracking-tight mb-4">
+            {language === 'hi'
+              ? 'भगवान त्रिनेत्र महाकाल की पावन अग्नि से समस्त बाधाओं का निवारण'
+              : 'Dissolution of Occult & Paranormal Afflictions Through Sacred Agni'}
+          </h2>
+          <p className="text-sm sm:text-base text-[#A39E93] leading-relaxed">
+            {language === 'hi'
+              ? 'बिना किसी अंधविश्वास या भय के—शुद्ध वैदिक एवं तांत्रिक पद्धतियों, अथर्ववेद एवं शिव महापुराण के प्रमाणिक मंत्रों द्वारा जीवन के अदृश्य अवरोधों, प्रेत बाधा एवं तंत्र दोषों से मुक्ति।'
+              : 'With authentic scriptural dignity and zero superstition: initiated Vedic Acharyas conduct targeted Maha Havans in the consecrated Yagyashala to eliminate negative energies and psychic torment.'}
+          </p>
+        </div>
+
+        {/* 2-Column Split: Scriptural Insights Left, Confidential Intake Form Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: 3 Category Cards (7 Cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            {SITE_CONFIG.yagyaCategories.map((cat) => (
+              <div
+                key={cat.id}
+                className="bg-[#161A22] rounded-xl border border-[#D4AF37]/25 p-6 hover:border-[#D4AF37]/60 transition-all shadow-md"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-mono font-bold text-[#D4AF37] uppercase tracking-wide">
+                    {cat.scripture}
+                  </span>
+                  <span className="text-xs text-[#E65C00] font-semibold">अग्नि शुद्धि</span>
+                </div>
+                <h3 className="text-lg font-bold text-[#F4F1EA] font-serif mb-2">
+                  {language === 'hi' ? cat.hindiTitle : cat.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#A39E93] leading-relaxed mb-4">{cat.description}</p>
+                <div className="flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                  <span>✓ {language === 'hi' ? 'गोत्र सहित वैयक्तिक संकल्प' : 'Personalized Gotra Sankalpa'}</span>
+                  <span>•</span>
+                  <span>✓ {language === 'hi' ? 'भस्म रक्षा कवच प्रेषण' : 'Protective Bhasma Dispatch'}</span>
+                </div>
+              </div>
+            ))}
+
+            {/* Direct Acharya Helpline Card */}
+            <div className="p-6 rounded-xl bg-gradient-to-r from-[#1B1214] to-[#161A22] border border-[#C83A22]/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h4 className="text-base font-bold text-[#F4F1EA] mb-1">
+                  {language === 'hi' ? 'आचार्य जी से सीधे बात करें' : 'Speak Directly with an Initiated Acharya'}
+                </h4>
+                <p className="text-xs text-[#A39E93]">
+                  {language === 'hi'
+                    ? 'अति गंभीर अथवा तीव्र बाधा की स्थिति में सीधे 1-on-1 परामर्श प्राप्त करें।'
+                    : 'Confidential 1-on-1 spiritual consultation for severe paranormal or spiritual distress.'}
+                </p>
+              </div>
+              <a
+                href={`https://wa.me/${SITE_CONFIG.contact.whatsappSeva.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 px-5 py-2.5 rounded bg-[#046A38] hover:bg-[#03582E] text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-xs"
+              >
+                <span>💬</span>
+                <span>WhatsApp Helpline</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Confidential Intake Form (5 Cols) */}
+          <div className="lg:col-span-5 bg-[#161A22] rounded-xl border border-[#D4AF37]/35 p-6 sm:p-7 shadow-xl">
+            <div className="mb-6">
+              <span className="text-xs text-[#34A853] font-bold uppercase tracking-wider block mb-1">
+                🔒 {language === 'hi' ? 'शत-प्रतिशत गोपनीय परामर्श' : '100% Confidential Intake'}
+              </span>
+              <h3 className="text-xl font-bold font-serif text-[#F4F1EA]">
+                {language === 'hi' ? 'यज्ञ एवं बाधा निवारण संकल्प पत्र' : 'Yagya Consultation Request'}
+              </h3>
+              <p className="text-xs text-[#A39E93] mt-1">
+                {language === 'hi'
+                  ? 'अपना विवरण भरें। मंदिर के वरिष्ठ वैदिक आचार्य आपके गोत्र एवं कष्ट का अध्ययन कर मार्गदर्शन देंगे।'
+                  : 'Submit your birth details and nature of affliction. Senior Acharyas will review your case with complete privacy.'}
+              </p>
+            </div>
+
+            {isSubmitted ? (
+              <div className="p-6 rounded-lg bg-[#0D0F12] border border-[#34A853]/50 text-center">
+                <span className="text-3xl block mb-2">🙏</span>
+                <h4 className="text-base font-bold text-[#F4F1EA] mb-2">
+                  {language === 'hi' ? 'संकल्प पत्र सफलतापूर्वक प्राप्त हुआ' : 'Inquiry Successfully Received'}
+                </h4>
+                <p className="text-xs text-[#A39E93] leading-relaxed mb-4">
+                  {language === 'hi'
+                    ? 'आचार्य जी २४ घंटे के भीतर आपसे व्हाट्सएप/दूरभाष पर संपर्क कर यज्ञ तिथि एवं विधि सुनिश्चित करेंगे।'
+                    : 'The presiding Acharya will contact you within 24 hours on your WhatsApp to schedule the Vedic Sankalpa.'}
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-xs text-[#D4AF37] underline hover:text-white"
+                >
+                  {language === 'hi' ? 'नया विवरण दर्ज करें' : 'Submit another inquiry'}
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1">
+                    {language === 'hi' ? 'यजमान का पूरा नाम *' : 'Devotee Full Name *'}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="e.g. Rajesh Sharma"
+                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#F4F1EA] mb-1">
+                      {language === 'hi' ? 'गोत्र (Gotra) *' : 'Gotra *'}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.gotra}
+                      onChange={(e) => setFormData({ ...formData, gotra: e.target.value })}
+                      placeholder="e.g. Kashyap / Unknown"
+                      className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#F4F1EA] mb-1">
+                      {language === 'hi' ? 'व्हाट्सएप नंबर *' : 'WhatsApp Number *'}
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.whatsapp}
+                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                      placeholder="e.g. 9876543210"
+                      className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1">
+                    {language === 'hi' ? 'बाधा / कष्ट की श्रेणी *' : 'Category of Affliction *'}
+                  </label>
+                  <select
+                    value={formData.category}
+                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+                  >
+                    <option value="tantrik_badha">Tantrik Badha / Occult Attack / Blockage</option>
+                    <option value="paranormal">Paranormal Distress / Fear / Evil Eye</option>
+                    <option value="graha_pitra_dosh">Graha Shanti / Kaalsarp / Pitra Dosh</option>
+                    <option value="general_health">Chronic Health / Family Peace</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#F4F1EA] mb-1">
+                    {language === 'hi' ? 'लक्षण अथवा समस्या का संक्षिप्त विवरण *' : 'Brief Description of Symptoms *'}
+                  </label>
+                  <textarea
+                    rows={3}
+                    required
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder={
+                      language === 'hi'
+                        ? 'जैसे: निरंतर अकारण भय, व्यापार में रुकावट, घर में अशांति...'
+                        : 'e.g. Unexplained sudden life stagnation, recurring nightmares, severe domestic discord...'
+                    }
+                    className="w-full px-3.5 py-2.5 rounded bg-[#0D0F12] border border-white/15 text-sm text-white placeholder-[#A39E93]/60 focus:outline-none focus:border-[#D4AF37]"
+                  ></textarea>
+                </div>
+
+                <div className="text-[11px] text-[#A39E93] leading-snug">
+                  🛡️ {language === 'hi' ? 'आपकी जानकारी शत-प्रतिशत गोपनीय रखी जाती है।' : 'Your spiritual details are kept strictly confidential.'}
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded bg-gradient-to-r from-[#C83A22] to-[#9E2010] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
+                >
+                  {language === 'hi' ? 'गोपनीय संकल्प पत्र भेजें' : 'Submit Confidential Intake'}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

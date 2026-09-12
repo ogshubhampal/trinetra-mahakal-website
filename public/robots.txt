@@ -1,0 +1,47 @@
+# ==============================================================================
+# Robots Directives (RFC 9309 Compliant)
+# Controls Web Crawlers, Indexers & AI Browsing Agents
+# ==============================================================================
+
+# Search Engine Crawlers (Google, Bing, DuckDuckGo, Yahoo, etc.)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /*/success
+Disallow: /checkout/success
+
+# OpenAI Search & ChatGPT Crawling
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+Disallow: /admin/*
+
+# Anthropic Claude Crawling
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+Disallow: /admin/*
+
+# Perplexity AI Crawling
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /admin/
+Disallow: /admin/*
+
+# Google AI Extended & Apple Intelligence
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Canonical XML Sitemap & LLM AI Manifest
+Sitemap: https://example.com/sitemap.xml

@@ -1,0 +1,257 @@
+{
+  "nha": {
+    "title": "PMJAY - Beneficiary Portal",
+    "statusCode": 200,
+    "htmlBytes": 749,
+    "cssCount": 1,
+    "sampleCssLinks": [
+      "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+    ],
+    "uniqueHexColors": [],
+    "uniqueRgbColors": [],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": false,
+      "gigwMention": false,
+      "ux4g": false,
+      "accessibilityToolbar": true,
+      "languageSelector": false,
+      "marqueeUsed": false,
+      "tableLayout": 0,
+      "directBenefitAuth": true
+    }
+  },
+  "pmkisan": {
+    "title": "\r\n\tPM-Kisan Samman Nidhi\r\n",
+    "statusCode": 200,
+    "htmlBytes": 65764,
+    "cssCount": 5,
+    "sampleCssLinks": [
+      "new_css/bootstrap.min.css",
+      "new_css/font-awesome.min.css",
+      "new_css/material.css",
+      "new_css/animate.css",
+      "new_css/style.css"
+    ],
+    "uniqueHexColors": [
+      "#ff615e",
+      "#482a80",
+      "#f8de6f",
+      "#fdc0bf",
+      "#018a80",
+      "#90EE90",
+      "#fff"
+    ],
+    "uniqueRgbColors": [
+      "rgba(15,20,25,1)",
+      "rgb(255,255,255)",
+      "rgb(0, 104, 58)"
+    ],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": true,
+      "gigwMention": true,
+      "ux4g": false,
+      "accessibilityToolbar": true,
+      "languageSelector": true,
+      "marqueeUsed": false,
+      "tableLayout": 0,
+      "directBenefitAuth": true
+    }
+  },
+  "epfo": {
+    "title": "Employees' Provident Fund Organisation",
+    "statusCode": 200,
+    "htmlBytes": 280491,
+    "cssCount": 28,
+    "sampleCssLinks": [
+      "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
+      "https://unpkg.com/swiper/swiper-bundle.min.css",
+      "https://www.epfo.gov.in/wp-content/plugins/contact-form-7/includes/css/styles.css",
+      "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    ],
+    "uniqueHexColors": [
+      "#038",
+      "#7a00df",
+      "#ddd",
+      "#007cba",
+      "#006ba1",
+      "#005a87",
+      "#eee",
+      "#313131",
+      "#00d084",
+      "#0693e3",
+      "#34e2e4",
+      "#4721fb",
+      "#ab1dfe",
+      "#faaca8",
+      "#dad0ec",
+      "#fafae1",
+      "#67a671",
+      "#fdd79a",
+      "#004a59",
+      "#330968"
+    ],
+    "uniqueRgbColors": [
+      "rgb(6,147,227)",
+      "rgb(155,81,224)",
+      "rgb(122,220,180)",
+      "rgb(0,208,130)",
+      "rgb(252,185,0)",
+      "rgb(255,105,0)",
+      "rgb(207,46,46)",
+      "rgb(238,238,238)",
+      "rgb(169,184,195)",
+      "rgb(74,234,220)"
+    ],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": false,
+      "gigwMention": false,
+      "ux4g": true,
+      "accessibilityToolbar": true,
+      "languageSelector": true,
+      "marqueeUsed": false,
+      "tableLayout": 0,
+      "directBenefitAuth": true
+    }
+  },
+  "digilocker": {
+    "title": "DigiLocker | Access, Share & Verify Digital Documents",
+    "statusCode": 200,
+    "htmlBytes": 60471,
+    "cssCount": 7,
+    "sampleCssLinks": [
+      "assets/js/swiper-bundle.min.css",
+      "https://cdn.digilocker.gov.in/ux4g/UX4G@1.0.2/css/ux4g-min.css",
+      "assets/landing/css/custom-v32.css",
+      "https://cdn.digilocker.gov.in/digilocker-landing-page/assets/fontawesome/css/all.css",
+      "assets/landing/css/cards-backgroud-colors-v1.css"
+    ],
+    "uniqueHexColors": [
+      "#0052CC",
+      "#F4F5F8B0",
+      "#b0b0b0"
+    ],
+    "uniqueRgbColors": [],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": false,
+      "gigwMention": false,
+      "ux4g": true,
+      "accessibilityToolbar": true,
+      "languageSelector": true,
+      "marqueeUsed": false,
+      "tableLayout": 0,
+      "directBenefitAuth": true
+    }
+  },
+  "uidai": {
+    "title": "Home - Unique Identification Authority of India | Government of India - Unique Identification Authority of India | Government of India",
+    "statusCode": 200,
+    "htmlBytes": 552557,
+    "cssCount": 2,
+    "sampleCssLinks": [
+      "/_next/static/css/6354b6e612f4068d.css",
+      "/_next/static/css/02405c06b6426716.css"
+    ],
+    "uniqueHexColors": [
+      "#191636",
+      "#316444",
+      "#ffc107",
+      "#C72E07",
+      "#17a2b8",
+      "#A6AAB1",
+      "#2C323D",
+      "#47455E",
+      "#5A5971",
+      "#1A1A1A",
+      "#1A2B47",
+      "#EFEEF8",
+      "#F2F0FC",
+      "#302F40",
+      "#0F2518",
+      "#EDF7F2",
+      "#FFFFFF",
+      "#000000",
+      "#1c1b3a",
+      "#C5C3D8"
+    ],
+    "uniqueRgbColors": [
+      "rgba(0, 0, 0, 0.08)",
+      "rgba(255, 235, 216, 0)",
+      "rgba(0,0,0,0.2)",
+      "rgba(0,0,0,0.14)",
+      "rgba(0,0,0,0.12)",
+      "rgb(71, 68, 94)",
+      "rgb(17, 15, 37)",
+      "rgb(88, 85, 135)",
+      "rgb(32, 30, 73)",
+      "rgba(0, 0, 0, 0.38)"
+    ],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": false,
+      "gigwMention": false,
+      "ux4g": false,
+      "accessibilityToolbar": true,
+      "languageSelector": true,
+      "marqueeUsed": false,
+      "tableLayout": 0,
+      "directBenefitAuth": true
+    }
+  },
+  "indiagov": {
+    "title": "Home | National Portal of India",
+    "statusCode": 200,
+    "htmlBytes": 525517,
+    "cssCount": 8,
+    "sampleCssLinks": [
+      "/_next/static/css/773d3d9c137ae05a.css",
+      "/_next/static/css/a8902e5c8093715f.css",
+      "/_next/static/css/7c4b455c56926ef3.css",
+      "/_next/static/css/e6c5daf09d42192a.css",
+      "/_next/static/css/f17484a730f05f94.css"
+    ],
+    "uniqueHexColors": [
+      "#A7A7A7",
+      "#C1C7CD",
+      "#767676",
+      "#FFFA43",
+      "#2B2288",
+      "#FFF",
+      "#121212",
+      "#2B6FA8",
+      "#FFE9E9",
+      "#F7F7F7",
+      "#F15B25",
+      "#D9D9D9",
+      "#006934",
+      "#046A38",
+      "#13295a",
+      "#272727",
+      "#F8F8FA",
+      "#333",
+      "#737373",
+      "#F2F4F8"
+    ],
+    "uniqueRgbColors": [
+      "rgba(251,247,120,0.9)",
+      "rgba(0,0,0,0.25)",
+      "rgba(0,0,0,0.45)",
+      "rgba(0,0,0,0.85)"
+    ],
+    "signatures": {
+      "ashokaEmblem": false,
+      "nicMention": true,
+      "gigwMention": false,
+      "ux4g": false,
+      "accessibilityToolbar": true,
+      "languageSelector": true,
+      "marqueeUsed": false,
+      "tableLayout": 1,
+      "directBenefitAuth": true
+    }
+  }
+}

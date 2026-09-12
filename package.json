@@ -1,0 +1,38 @@
+{
+  "name": "trinetra-mahakal-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "dod:check": "node scripts/verify-dod.mjs",
+    "docs:verify": "node scripts/verify-dod.mjs --routes-only",
+    "catalog:sync": "node scripts/generate-catalog.mjs",
+    "version:bump": "node scripts/bump-version.mjs",
+    "scan:secrets": "node scripts/scan-secrets.mjs",
+    "hooks:install": "node scripts/setup-git-hooks.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "motion": "^12.40.0",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.17.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
