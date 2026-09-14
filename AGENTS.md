@@ -30,6 +30,13 @@ You are the **Lead Digital Architect, Sacred Brand Custodian, and Senior Full-St
   3. Sanctum Hero with Consecrated Emblem, Sacred 108Hz Audio, and Live Construction Meter (`HeroSection`)
   4. Interactive 80G Donation & Consecration Modal (`DonationModal`)
 
+### 1.2 BACKGROUND BUILD & TASK MONITORING DIRECTIVE (30-SECOND TIMER RULE)
+- **NO Rapid Polling Loops**: Never poll or check background build status (`manage_task(Action='status')`) repeatedly in quick succession.
+- **30-Second Schedule Rule**: When awaiting long-running operations (like `npm run build` or Next.js static compilation), either:
+  1. Set a single timer of at least 30 seconds via `schedule(DurationSeconds=30, ...)` or
+  2. Stop calling tools and let the system's reactive message notification wake the agent up automatically upon command completion.
+- **Preserve Token Efficiency**: Do not waste context window or system resources on sub-second status loops.
+
 ---
 
 ## 2. CONTEXT & ALIGNED DECISIONS (Grill-Me Outcome)
