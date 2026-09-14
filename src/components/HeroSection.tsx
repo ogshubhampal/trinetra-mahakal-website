@@ -43,24 +43,24 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
   );
 
   return (
-    <section className="relative min-h-[94dvh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-16 overflow-hidden bg-sanctum-gradient border-b border-[#D4AF37]/25">
+    <section className="relative flex-1 min-h-[calc(100dvh-100px)] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-2 sm:py-4 overflow-hidden bg-sanctum-gradient">
       {/* Background Sacred Agni Atmosphere & Subtle Sparks */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#C83A22]/12 rounded-full blur-[150px] animate-agni"></div>
-        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#D4AF37]/8 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#C83A22]/12 rounded-full blur-[130px] animate-agni"></div>
+        <div className="absolute top-10 right-10 w-[280px] h-[280px] bg-[#D4AF37]/8 rounded-full blur-[90px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
         {/* Sacred Visual Centerpiece: Consecrated Trinetra Mahakal Trishul & Third Eye */}
-        <div className="relative mb-6 group cursor-pointer" onClick={() => onOpenDonateModal('shila')}>
+        <div className="relative mb-2 group cursor-pointer" onClick={() => onOpenDonateModal('shila')}>
           {/* Outer Radiant Brass Ring */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#12151D] border-2 border-[#D4AF37]/70 flex items-center justify-center shadow-2xl relative glow-gold group-hover:border-[#D4AF37] transition-all">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#12151D] border-2 border-[#D4AF37]/70 flex items-center justify-center shadow-lg relative glow-gold group-hover:border-[#D4AF37] transition-all">
             {/* Pulsating Fire Glow */}
-            <div className="absolute inset-2 rounded-full bg-gradient-to-t from-[#C83A22]/40 via-[#E65C00]/20 to-transparent blur-xs"></div>
+            <div className="absolute inset-1.5 rounded-full bg-gradient-to-t from-[#C83A22]/40 via-[#E65C00]/20 to-transparent blur-xs"></div>
 
             {/* Sacred Trishul & Trinetra SVG Vector */}
             <svg
-              className="w-14 h-14 sm:w-16 sm:h-16 text-[#D4AF37] relative z-10"
+              className="w-8 h-8 sm:w-9 sm:h-9 text-[#D4AF37] relative z-10"
               viewBox="0 0 100 100"
               fill="none"
               stroke="currentColor"
@@ -84,20 +84,20 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
             </svg>
 
             {/* Micro Badge for Active Consecration */}
-            <span className="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-[#C83A22] text-white text-[10px] font-bold uppercase tracking-wider border border-[#D4AF37]/60 shadow-xs">
+            <span className="absolute -bottom-2 px-1.5 py-0.2 rounded-full bg-[#C83A22] text-white text-[8px] font-bold uppercase tracking-wider border border-[#D4AF37]/60 shadow-xs">
               नीव प्रतिष्ठा
             </span>
           </div>
         </div>
 
         {/* Sacred Sanskrit Shloka Header */}
-        <div className="mb-4">
-          <div className="inline-flex items-center gap-2 text-xs font-serif text-[#D4AF37] tracking-widest uppercase">
+        <div className="mb-1.5">
+          <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-serif text-[#D4AF37] tracking-widest uppercase">
             <span>✧</span>
             <span>ॐ हौं जूँ सः भूर्भुवः स्वः त्र्यम्बकं यजामहे</span>
             <span>✧</span>
           </div>
-          <p className="text-xs text-[#A39E93] italic tracking-wider mt-1">
+          <p className="text-[10px] sm:text-[11px] text-[#A39E93] italic tracking-wider mt-0.5">
             {language === 'hi'
               ? 'समस्त भय, तंत्र बाधा एवं काल दोष निवारक — भगवान त्रिनेत्र महाकाल'
               : 'The Supreme Three-Eyed Transcendent — Dissolver of Fear, Occult Bonds & Negativity'}
@@ -105,19 +105,19 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
         </div>
 
         {/* Grand Sanctum Display Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-[#F4F1EA] tracking-tight leading-[1.15] mb-6 max-w-4xl">
+        <h1 className="text-xl sm:text-3xl md:text-4xl font-serif font-bold text-[#F4F1EA] tracking-tight leading-[1.15] mb-2 max-w-2xl">
           {language === 'hi' ? (
             <>
-              श्री त्रिनेत्र महाकाल के पावन मंदिर निर्माण में{' '}
-              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-8">
+              श्री त्रिनेत्र महाकाल मंदिर निर्माण में{' '}
+              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-4">
                 अपनी आधार शिला
               </span>{' '}
               समर्पित करें
             </>
           ) : (
             <>
-              Consecrate Your Sacred Shila in the Holy Sanctuary of{' '}
-              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-8">
+              Consecrate Your Sacred Shila in the Sanctuary of{' '}
+              <span className="text-[#D4AF37] underline decoration-[#C83A22]/70 decoration-2 underline-offset-4">
                 Bhagwan Trinetra Mahakal
               </span>
             </>
@@ -125,17 +125,17 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
         </h1>
 
         {/* Narrative Subtext */}
-        <p className="text-sm sm:text-base md:text-lg text-[#A39E93] max-w-2xl mx-auto leading-relaxed mb-8">
+        <p className="text-[11px] sm:text-xs md:text-sm text-[#A39E93] max-w-xl mx-auto leading-relaxed mb-3">
           {language === 'hi'
-            ? 'पवित्र नीव स्थापित हो चुकी है। अब त्रिनेत्र महाकाल के भव्य गर्भगृह, वैदिक यज्ञशाला एवं निर्धनों के लिए नित्य अन्न क्षेत्र (भंडारे) के निर्माण में अपना पवित्र योगदान दें। धारा ८०जी के अंतर्गत शत-प्रतिशत कर छूट।'
+            ? 'पवित्र नीव स्थापित हो चुकी है। अब त्रिनेत्र महाकाल के भव्य गर्भगृह, वैदिक यज्ञशाला एवं नित्य अन्न क्षेत्र (भंडारे) के निर्माण में अपना पवित्र योगदान दें। धारा ८०जी के अंतर्गत शत-प्रतिशत कर छूट।'
             : 'The sacred foundation stone is consecrated. Join thousands of devotees in constructing the sanctum sanctorum, nine-fire Vedic Yagyashala, and daily sadhu bhandara. Verified 80G tax benefits with instant digital receipts.'}
         </p>
 
         {/* Primary Action Button Matrix */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 w-full sm:w-auto mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 w-full sm:w-auto mb-3">
           <button
             onClick={() => onOpenDonateModal('shila')}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-[#F4F1EA] font-bold text-xs uppercase tracking-wider border border-[#D4AF37]/60 shadow-lg hover:shadow-[#C83A22]/30 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
+            className="w-full sm:w-auto px-5 py-2 rounded-lg bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-[#F4F1EA] font-bold text-xs uppercase tracking-wider border border-[#D4AF37]/60 shadow-lg hover:shadow-[#C83A22]/30 transition-all flex items-center justify-center gap-1.5 active:scale-[0.98]"
           >
             <span>🪨</span>
             <span>{language === 'hi' ? 'शिला दान / निर्माण सहयोग' : 'Sponsor 1 Sacred Shila (₹1,100)'}</span>
@@ -143,7 +143,7 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
 
           <button
             onClick={onOpenYagyaModal}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#161A22] hover:bg-[#1E232E] text-[#D4AF37] hover:text-white font-semibold text-xs tracking-wider uppercase border border-[#D4AF37]/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
+            className="w-full sm:w-auto px-4 py-2 rounded-lg bg-[#161A22] hover:bg-[#1E232E] text-[#D4AF37] hover:text-white font-semibold text-xs tracking-wider uppercase border border-[#D4AF37]/40 transition-all flex items-center justify-center gap-1.5 active:scale-[0.98]"
           >
             <span>🔥</span>
             <span>{language === 'hi' ? 'तांत्रिक बाधा परामर्श लें' : 'Consult Acharya for Yagya'}</span>
@@ -152,7 +152,7 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
           {/* Ambient Chant Audio Toggle with Active Animation */}
           <button
             onClick={toggleSacredAudio}
-            className={`p-3.5 rounded-lg border transition-all flex items-center justify-center gap-1.5 ${
+            className={`p-2 rounded-lg border transition-all flex items-center justify-center gap-1.5 ${
               isPlayingAudio
                 ? 'bg-[#C83A22] text-white border-[#D4AF37] ring-2 ring-[#D4AF37]/40'
                 : 'bg-[#161A22] text-[#A39E93] hover:text-[#D4AF37] border-[#D4AF37]/30'
@@ -161,13 +161,13 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
             aria-label="Toggle Sacred Sound Ambiance"
           >
             <span>{isPlayingAudio ? '🔊' : '🔈'}</span>
-            <span className="text-[11px] font-semibold">{isPlayingAudio ? '108Hz Active' : 'Chant Sound'}</span>
+            <span className="text-[10px] font-semibold">{isPlayingAudio ? '108Hz Active' : 'Chant Sound'}</span>
           </button>
         </div>
 
         {/* Transparent Construction Meter & Live Civic Counters */}
-        <div className="w-full max-w-3xl bg-stone-surface border border-[#D4AF37]/30 rounded-xl p-5 sm:p-6 backdrop-blur-sm shadow-2xl">
-          <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider mb-2">
+        <div className="w-full max-w-xl bg-stone-surface border border-[#D4AF37]/30 rounded-xl p-3 sm:p-3.5 backdrop-blur-sm shadow-xl">
+          <div className="flex justify-between items-center text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider mb-1">
             <span className="text-[#A39E93]">
               {language === 'hi' ? 'गर्भगृह निर्माण निधि संचयन:' : 'Garbhagriha Nirman Phase Progress:'}
             </span>
@@ -178,7 +178,7 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
           </div>
 
           {/* Progress Bar with Sacred Agni Glow */}
-          <div className="w-full h-3 bg-[#0D0F12] rounded-full overflow-hidden border border-white/10 p-0.5 mb-5">
+          <div className="w-full h-2 bg-[#0D0F12] rounded-full overflow-hidden border border-white/10 p-0.5 mb-2">
             <div
               className="h-full bg-gradient-to-r from-[#C83A22] via-[#E65C00] to-[#D4AF37] rounded-full transition-all duration-1000 shadow-sm"
               style={{ width: `${percent}%` }}
@@ -186,27 +186,27 @@ export function HeroSection({ language, onOpenDonateModal, onOpenYagyaModal }: H
           </div>
 
           {/* Three Live Transparency Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 border-t border-white/10 text-left">
+          <div className="grid grid-cols-3 gap-2 pt-1.5 border-t border-white/10 text-center sm:text-left">
             <div>
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#F4F1EA]">
+              <div className="text-sm sm:text-base font-bold font-serif text-[#F4F1EA]">
                 {SITE_CONFIG.construction.shilasPledged.toLocaleString()}+
               </div>
-              <div className="text-xs text-[#A39E93]">
-                {language === 'hi' ? 'पावन शिलाएं समर्पित' : 'Sacred Shilas Consecrated'}
+              <div className="text-[9px] sm:text-[10px] text-[#A39E93]">
+                {language === 'hi' ? 'शिलाएं समर्पित' : 'Shilas Consecrated'}
               </div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#D4AF37]">
+              <div className="text-sm sm:text-base font-bold font-serif text-[#D4AF37]">
                 {SITE_CONFIG.construction.mealsServed.toLocaleString()}+
               </div>
-              <div className="text-xs text-[#A39E93]">
-                {language === 'hi' ? 'भंडारा महाप्रसाद वितरित' : 'Bhandara Meals Distributed'}
+              <div className="text-[9px] sm:text-[10px] text-[#A39E93]">
+                {language === 'hi' ? 'भंडारा महाप्रसाद' : 'Meals Distributed'}
               </div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold font-serif text-[#34A853]">100%</div>
-              <div className="text-xs text-[#A39E93]">
-                {language === 'hi' ? '८०जी आयकर छूट रसीद' : '80G Tax Exemption Receipts'}
+              <div className="text-sm sm:text-base font-bold font-serif text-[#34A853]">100%</div>
+              <div className="text-[9px] sm:text-[10px] text-[#A39E93]">
+                {language === 'hi' ? '८०जी कर छूट' : '80G Tax Exempt'}
               </div>
             </div>
           </div>

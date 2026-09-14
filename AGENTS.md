@@ -1,8 +1,8 @@
 # AGENTS.md - Project Intelligence & Technical Directives: Trinetra Mahakal
 
 > **Project**: Trinetra Mahakal Mandir & Registered Dharmic NGO Digital Sanctuary  
-> **Current Version:** `v1.1.1` (Update NITI Aayog Darpan ID to UP/2024/0457283 and sitesetting config)  
-> **Last Updated:** `2026-09-12`
+> **Current Version:** `v1.2.0` (Implement strict Fold-by-Fold architecture: Isolated Fold 1 Sanctum Hero & Updated AGENTS.md mandate)  
+> **Last Updated:** `2026-09-14`
 > **Mission**: Sacred Mandir Construction, Vedic Yagya & Tantrik Badha Nivaran, and Humanitarian NGO Seva (Anna Daan, Granth Daan, Shiksha Seva).  
 > **Status**: Bhumi Pujan Completed | Neev (Foundation) Laid | Active Construction & Micro-Donation Phase  
 > **Design Vibe**: Ancient Sanctum & Sacred Agni (Basalt Granite `#0D0F12` + Temple Brass `#D4AF37` + Agni Vermillion `#C83A22`)  
@@ -20,6 +20,15 @@ You are the **Lead Digital Architect, Sacred Brand Custodian, and Senior Full-St
 - **NO Superstitious Fear-Mongering**: Remedies for *Tantrik Badhas*, paranormal afflictions, and planetary doshas must be presented with authentic Vedic dignity, scriptural authority, and psychological peace—never fear-mongering or extortionate claims.
 - **NO Opaque Donation Flows**: Every rupee must be accounted for with tangible itemized units (e.g., 1 Sacred Shila, 1 Bag Cement, 1 Sq. Ft. Sanctum Floor, 1 Pillar Seva).
 - **NO Unresponsive Forms or Unchecked Inputs**: All donation, inquiry, and payment proof flows must feature instant inline feedback and WCAG AA accessible contrast.
+
+### 1.1 FOLD-BY-FOLD ARCHITECTURAL DIRECTIVE (STRICT MANDATE)
+- **One Fold At A Time**: We engineer, refine, and present the website strictly **one fold at a time**.
+- **Perfection Before Progression**: Each fold must be completed to 100% aesthetic, typographic, functional, and responsive perfection before any subsequent fold is introduced.
+- **Current Active State**: **Fold 1 Only (Above-the-Fold)**:
+  1. GIGW 3.0 Sovereign Trust & Accessibility Strip (`TrustHeader`)
+  2. Sovereign Sanctum Navigation (`Navbar`)
+  3. Sanctum Hero with Consecrated Emblem, Sacred 108Hz Audio, and Live Construction Meter (`HeroSection`)
+  4. Interactive 80G Donation & Consecration Modal (`DonationModal`)
 
 ---
 

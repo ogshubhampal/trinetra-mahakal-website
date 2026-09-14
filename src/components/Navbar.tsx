@@ -11,19 +11,33 @@ interface NavbarProps {
 export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleNavAction = (action: string) => {
+    setMobileMenuOpen(false);
+    if (action === 'shila' || action === 'nirman' || action === 'ngo') {
+      onOpenDonateModal(action === 'ngo' ? 'anna_daan' : 'shila');
+    } else if (action === 'yagya') {
+      const text = encodeURIComponent(
+        language === 'hi'
+          ? 'प्रणाम आचार्य जी, मुझे भगवान त्रिनेत्र महाकाल के पावन यज्ञ एवं तांत्रिक बाधा/ग्रह दोष निवारण परामर्श हेतु जानकारी चाहिए।'
+          : 'Pranam Acharya Ji, I would like to consult regarding Bhagwan Trinetra Mahakal Vedic Yagya and spiritual relief.'
+      );
+      window.open(`https://wa.me/${SITE_CONFIG.contact.whatsappSeva.replace(/[^0-9]/g, '')}?text=${text}`, '_blank');
+    } else if (action === 'helpline') {
+      window.location.href = `tel:${SITE_CONFIG.contact.acharyaHelpline}`;
+    }
+  };
+
   const navLinks = [
-    { href: '#nirman', en: 'Neev to Shikhar', hi: 'नीव से शिखर' },
-    { href: '#shila-seva', en: 'Itemized Seva', hi: 'शिला एवं निर्माण सेवा' },
-    { href: '#yagya', en: 'Tantrik Badha Relief', hi: 'तांत्रिक बाधा निवारण' },
-    { href: '#ngo-seva', en: 'NGO Anna Daan', hi: 'अन्न एवं शिक्षा सेवा' },
-    { href: '#track', en: 'Track UTR Status', hi: 'स्थिति जांच (UTR)' },
-    { href: '#contact', en: 'Darshan & Helpline', hi: 'दर्शन एवं संपर्क' },
+    { action: 'shila', en: 'Sacred Shila Seva', hi: 'शिला दान सेवा' },
+    { action: 'yagya', en: 'Vedic Yagya & Tantrik Relief', hi: 'तांत्रिक बाधा निवारण' },
+    { action: 'ngo', en: 'Anna Daan Mahaprasad', hi: 'अन्न क्षेत्र भंडारा' },
+    { action: 'helpline', en: 'Acharya Helpline', hi: 'आचार्य संपर्क' },
   ];
 
   return (
     <header className="sticky top-0 z-40 bg-[#0D0F12]/95 backdrop-blur-md border-b border-[#D4AF37]/25 transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Brand & Sacred Emblem */}
           <a href="#" className="flex items-center gap-3 group">
             {/* Sacred Trishul & Third Eye Insignia */}
@@ -46,13 +60,13 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs font-medium text-[#A39E93] hover:text-[#D4AF37] transition-colors tracking-wide py-1 border-b-2 border-transparent hover:border-[#D4AF37]"
+              <button
+                key={link.action}
+                onClick={() => handleNavAction(link.action)}
+                className="text-xs font-medium text-[#A39E93] hover:text-[#D4AF37] transition-colors tracking-wide py-1 border-b-2 border-transparent hover:border-[#D4AF37] cursor-pointer"
               >
                 {language === 'hi' ? link.hi : link.en}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -88,14 +102,13 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#0D0F12] border-b border-[#D4AF37]/30 px-4 pt-2 pb-6 space-y-3">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2.5 text-sm font-medium text-[#F4F1EA] hover:text-[#D4AF37] border-b border-white/5"
+            <button
+              key={link.action}
+              onClick={() => handleNavAction(link.action)}
+              className="block w-full text-left py-2.5 text-sm font-medium text-[#F4F1EA] hover:text-[#D4AF37] border-b border-white/5"
             >
               {language === 'hi' ? link.hi : link.en}
-            </a>
+            </button>
           ))}
           <div className="pt-2 flex flex-col gap-2">
             <a
