@@ -40,11 +40,31 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
         <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Brand & Sacred Emblem */}
           <a href="#" className="flex items-center gap-3 group">
-            {/* Sacred Trishul & Third Eye Insignia */}
-            <div className="relative w-11 h-11 rounded-full bg-[#FAF8F2] border-2 border-[#B8860B] flex items-center justify-center shadow-xs group-hover:border-[#C83A22] transition-all">
-              <div className="absolute w-3 h-5 rounded-full bg-[#C83A22] opacity-85 blur-[0.5px]"></div>
-              <div className="relative w-1.5 h-3 rounded-full bg-white shadow-xs"></div>
-              <div className="absolute inset-0 rounded-full border-t-2 border-r-2 border-[#B8860B] opacity-80"></div>
+            {/* Consecrated Trishul & Trinetra Sovereign Seal */}
+            <div className="relative w-11 h-11 rounded-full bg-gradient-to-b from-[#FFFDF9] to-[#F5EFE4] border-2 border-[#B8860B] flex items-center justify-center shadow-md group-hover:border-[#C83A22] transition-all shrink-0">
+              <svg
+                className="w-7 h-7 text-[#B8860B]"
+                viewBox="0 0 100 100"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                {/* Central Spear */}
+                <path d="M50 14 L50 86" strokeLinecap="round" stroke="#B8860B" strokeWidth="3" />
+                <polygon points="50,8 44,20 56,20" fill="#B8860B" stroke="none" />
+                
+                {/* Crescent Trishul Arms */}
+                <path d="M28 26 C28 50 42 60 50 64 C58 60 72 50 72 26" strokeLinecap="round" stroke="#B8860B" strokeWidth="2.5" />
+                <polygon points="28,20 24,30 32,30" fill="#B8860B" stroke="none" />
+                <polygon points="72,20 68,30 76,30" fill="#B8860B" stroke="none" />
+
+                {/* Damru Motif at Base */}
+                <polygon points="43,66 57,66 43,76 57,76" fill="#B8860B" opacity="0.8" />
+
+                {/* Radiant Third Eye (Trinetra) */}
+                <ellipse cx="50" cy="42" rx="6" ry="9" fill="#C83A22" stroke="#B8860B" strokeWidth="1.5" />
+                <ellipse cx="50" cy="42" rx="2" ry="4" fill="#FFFDF9" stroke="none" />
+              </svg>
             </div>
 
             <div className="flex flex-col">
@@ -71,10 +91,10 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
           </nav>
 
           {/* Action CTA & Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={() => onOpenDonateModal('shila')}
-              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider border border-[#B8860B]/40 shadow-md hover:shadow-[#C83A22]/20 transition-all active:scale-[0.98] cursor-pointer"
+              className="hidden sm:flex px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider border border-[#B8860B]/40 shadow-md hover:shadow-[#C83A22]/20 transition-all active:scale-[0.98] cursor-pointer"
             >
               {language === 'hi' ? 'शिला दान / सेवा करें' : 'Sponsor Shila / Seva'}
             </button>
@@ -82,11 +102,11 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-[#3D4350] hover:text-[#161A22] hover:bg-[#F4EFE6] border border-[#B8860B]/30"
+              className="lg:hidden w-10 h-10 rounded-lg text-[#3D4350] hover:text-[#161A22] hover:bg-[#F4EFE6] border border-[#B8860B]/35 flex items-center justify-center cursor-pointer shadow-xs"
               aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -100,17 +120,32 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-[#B8860B]/30 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+        <div className="lg:hidden bg-[#FCFBF8] border-b-2 border-[#B8860B]/30 px-4 pt-3 pb-6 space-y-3 shadow-xl">
           {navLinks.map((link) => (
             <button
               key={link.action}
               onClick={() => handleNavAction(link.action)}
-              className="block w-full text-left py-2.5 text-sm font-semibold text-[#161A22] hover:text-[#B8860B] border-b border-gray-100"
+              className="block w-full text-left py-2.5 text-sm font-semibold text-[#161A22] hover:text-[#8B5A00] border-b border-gray-200"
             >
               {language === 'hi' ? link.hi : link.en}
             </button>
           ))}
-          <div className="pt-2 flex flex-col gap-2">
+
+          {/* Prominent Mobile Drawer CTA */}
+          <div className="pt-2">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenDonateModal('shila');
+              }}
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] text-white font-bold text-xs uppercase tracking-wider border border-[#B8860B]/40 shadow-md flex items-center justify-center gap-2"
+            >
+              <span>🪨</span>
+              <span>{language === 'hi' ? 'शिला दान / निर्माण सहयोग' : 'Sponsor Shila / Seva'}</span>
+            </button>
+          </div>
+
+          <div className="pt-1 flex flex-col gap-1.5">
             <a
               href={`tel:${SITE_CONFIG.contact.acharyaHelpline}`}
               className="text-xs text-[#8B5A00] flex items-center gap-2 py-1 font-semibold"

@@ -29,11 +29,11 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
 
   return (
     <div className="bg-[#0B1B3D] border-b border-[#D4AF37]/30 text-[#E0E6ED] text-xs py-1.5 px-3 sm:px-6 relative z-50 shadow-xs">
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div className="max-w-7xl mx-auto flex justify-between items-center gap-1.5 sm:gap-2">
         {/* Left: Sovereign Trust & Official NGO Badge */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           {/* Tiranga Micro-Flag Bar */}
-          <div className="flex h-3.5 w-5 rounded overflow-hidden shadow-xs border border-white/30">
+          <div className="flex h-3.5 w-5 rounded overflow-hidden shadow-xs border border-white/30 shrink-0">
             <span className="w-1.5 bg-[#FF9933]"></span>
             <span className="w-2 bg-[#FFFFFF] flex items-center justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#000080]"></span>
@@ -45,7 +45,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             <span className="text-[#E2C365] font-semibold hidden sm:inline">
               {language === 'hi' ? 'पंजीकृत ट्रस्ट:' : 'Regd. Trust:'}
             </span>
-            <span className="text-white font-mono truncate max-w-[160px] sm:max-w-none">
+            <span className="text-white font-mono text-[10.5px] sm:text-xs tracking-tight sm:tracking-normal">
               {SITE_CONFIG.trust.registrationNo}
             </span>
             <span className="text-white/30 hidden lg:inline">|</span>
@@ -60,7 +60,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
         </div>
 
         {/* Right: GIGW 3.0 Accessibility Controls */}
-        <div className="flex items-center gap-2 sm:gap-4 ml-auto">
+        <div className="flex items-center gap-1.5 sm:gap-3 ml-auto shrink-0">
           {/* Skip to Main Content (Screen Reader) */}
           <a
             href="#main-content"

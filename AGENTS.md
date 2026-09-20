@@ -1,11 +1,11 @@
 # AGENTS.md - Project Intelligence & Technical Directives: Trinetra Mahakal
 
 > **Project**: Trinetra Mahakal Mandir & Registered Dharmic NGO Digital Sanctuary  
-> **Current Version:** `v1.2.0` (Implement strict Fold-by-Fold architecture: Isolated Fold 1 Sanctum Hero & Updated AGENTS.md mandate)  
-> **Last Updated:** `2026-09-14`
+> **Current Version:** `v1.2.1` (GovTech 2.0 Luminous Light Overhaul, Mobile Typography Scaling & Interactive Seva Hotspots)  
+> **Last Updated:** `2026-09-20`
 > **Mission**: Sacred Mandir Construction, Vedic Yagya & Tantrik Badha Nivaran, and Humanitarian NGO Seva (Anna Daan, Granth Daan, Shiksha Seva).  
 > **Status**: Bhumi Pujan Completed | Neev (Foundation) Laid | Active Construction & Micro-Donation Phase  
-> **Design Vibe**: Ancient Sanctum & Sacred Agni (Basalt Granite `#0D0F12` + Temple Brass `#D4AF37` + Agni Vermillion `#C83A22`)  
+> **Design Vibe**: Sovereign Luminous Teerth Kshetra (Sandstone Ivory `#FAF8F2` + Royal Navy `#0B1B3D` + Temple Brass `#B8860B` + Agni Vermillion `#C83A22`)  
 > **Tech Stack**: Next.js 15 (App Router) + Tailwind CSS v4 + Motion (`motion/react`) + Direct UPI QR & Proof Verification + Razorpay
 
 ---

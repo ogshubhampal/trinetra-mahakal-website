@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0D0F12] text-[#F4F1EA] selection:bg-[#C83A22] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F2] text-[#161A22] selection:bg-[#C83A22] selection:text-white">
       {/* ZONE 0: GIGW 3.0 Sovereign Trust & Accessibility Strip */}
       <TrustHeader language={language} onLanguageToggle={(lang) => setLanguage(lang)} />
 
