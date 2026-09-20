@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --bg-sanctum: #0D0F12;
-  --surface-sanctum: #161A22;
-  --surface-elevated: #1F2430;
-  --surface-card: #141822;
+  --bg-sanctum: #FAF8F2;
+  --surface-sanctum: #FFFFFF;
+  --surface-elevated: #F4EFE6;
+  --surface-card: #FFFFFF;
+  --header-navy: #0B1B3D;
   --accent-agni: #C83A22;
   --accent-ember: #E65C00;
-  --gold-brass: #D4AF37;
-  --gold-muted: #8E7322;
-  --text-bhasma: #F4F1EA;
-  --text-muted: #A39E93;
-  --border-sanctum: rgba(212, 175, 55, 0.22);
+  --gold-brass: #B8860B;
+  --gold-muted: #8E6B15;
+  --text-bhasma: #161A22;
+  --text-muted: #5C5549;
+  --border-sanctum: rgba(184, 134, 11, 0.25);
   --state-success: #046A38;
-  --state-warning: #FFAA01;
+  --state-warning: #D97706;
 }
 
 /* Accessibility High-Contrast Mode */
 html.high-contrast {
-  --bg-sanctum: #000000 !important;
-  --surface-sanctum: #121212 !important;
-  --surface-elevated: #1e1e1e !important;
-  --surface-card: #080808 !important;
-  --text-bhasma: #FFFFFF !important;
-  --text-muted: #FFFF00 !important;
-  --gold-brass: #FFFF00 !important;
-  --border-sanctum: #FFFF00 !important;
+  --bg-sanctum: #FFFFFF !important;
+  --surface-sanctum: #FFFFFF !important;
+  --surface-elevated: #F0F0F0 !important;
+  --surface-card: #FFFFFF !important;
+  --text-bhasma: #000000 !important;
+  --text-muted: #000000 !important;
+  --gold-brass: #000080 !important;
+  --border-sanctum: #000000 !important;
 }
 
 /* Accessibility Font Size Scales */
@@ -52,22 +53,22 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D0F12;
+  background: #FAF8F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.35);
+  background: rgba(184, 134, 11, 0.35);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #B8860B;
 }
 
 /* Sacred Glow Effects */
 .glow-gold {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.18);
 }
 .glow-agni {
-  box-shadow: 0 0 35px rgba(200, 58, 34, 0.3);
+  box-shadow: 0 6px 25px rgba(200, 58, 34, 0.25);
 }
 .border-gold-subtle {
   border: 1px solid var(--border-sanctum);
@@ -75,19 +76,19 @@ body {
 
 /* Background Gradients */
 .bg-sanctum-gradient {
-  background: radial-gradient(circle at 50% 15%, rgba(200, 58, 34, 0.12) 0%, rgba(22, 26, 34, 0.6) 40%, rgba(13, 15, 18, 1) 80%);
+  background: radial-gradient(circle at 50% 10%, rgba(255, 248, 235, 1) 0%, rgba(250, 248, 242, 1) 60%, rgba(242, 236, 225, 0.8) 100%);
 }
 
 .bg-agni-sheen {
-  background: linear-gradient(135deg, rgba(200, 58, 34, 0.18) 0%, rgba(212, 175, 55, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(200, 58, 34, 0.08) 0%, rgba(184, 134, 11, 0.06) 100%);
 }
 
 .bg-stone-surface {
-  background: linear-gradient(180deg, #181D27 0%, #12151D 100%);
+  background: #FFFFFF;
 }
 
 .bg-stone-card {
-  background: linear-gradient(180deg, #151922 0%, #0F1218 100%);
+  background: #FFFFFF;
 }
 
 /* Custom Range Slider */
@@ -95,9 +96,9 @@ input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 6px;
-  background: #0D0F12;
+  background: #E8E2D5;
   border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(184, 134, 11, 0.2);
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -105,10 +106,10 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #D4AF37;
+  background: #B8860B;
   border: 2px solid #C83A22;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 10px rgba(184, 134, 11, 0.4);
   transition: transform 0.1s ease;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
@@ -118,15 +119,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Subtle Pulsating Agni Aura */
 @keyframes agniPulse {
   0%, 100% {
-    opacity: 0.7;
+    opacity: 0.6;
     transform: scale(1);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.05);
+    opacity: 0.9;
+    transform: scale(1.04);
   }
 }
 
 .animate-agni {
-  animation: agniPulse 4s ease-in-out infinite;
+  animation: agniPulse 5s ease-in-out infinite;
 }
