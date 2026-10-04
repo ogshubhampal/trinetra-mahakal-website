@@ -29,15 +29,18 @@ html.high-contrast {
   --border-sanctum: #000000 !important;
 }
 
-/* Accessibility Font Size Scales */
+/* Accessibility Font Size Scales (Default calibrated to A+ prominence) */
+html {
+  font-size: 18.5px;
+}
 html.font-scale-sm {
-  font-size: 15px;
+  font-size: 16px;
 }
 html.font-scale-md {
-  font-size: 16.5px;
+  font-size: 18.5px;
 }
 html.font-scale-lg {
-  font-size: 18.5px;
+  font-size: 21px;
 }
 
 body {

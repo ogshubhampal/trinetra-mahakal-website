@@ -28,10 +28,10 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
   }, [isHighContrast]);
 
   return (
-    <div className="bg-[#0B1B3D] border-b border-[#D4AF37]/30 text-[#E0E6ED] text-xs py-1.5 px-3 sm:px-6 relative z-50 shadow-xs">
-      <div className="max-w-7xl mx-auto flex justify-between items-center gap-1.5 sm:gap-2">
+    <div className="bg-[#0B1B3D] border-b border-[#D4AF37]/30 text-[#E0E6ED] text-xs py-1.5 px-2.5 sm:px-6 relative z-50 shadow-xs">
+      <div className="max-w-7xl mx-auto flex justify-between items-center gap-1 sm:gap-2">
         {/* Left: Sovereign Trust & Official NGO Badge */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Tiranga Micro-Flag Bar */}
           <div className="flex h-3.5 w-5 rounded overflow-hidden shadow-xs border border-white/30 shrink-0">
             <span className="w-1.5 bg-[#FF9933]"></span>
@@ -45,7 +45,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             <span className="text-[#E2C365] font-semibold hidden sm:inline">
               {language === 'hi' ? 'पंजीकृत ट्रस्ट:' : 'Regd. Trust:'}
             </span>
-            <span className="text-white font-mono text-xs tracking-tight sm:tracking-normal font-semibold">
+            <span className="text-white font-mono text-[11px] sm:text-xs tracking-tight sm:tracking-normal font-semibold">
               {SITE_CONFIG.trust.registrationNo}
             </span>
             <span className="text-white/30 hidden lg:inline">|</span>
@@ -60,7 +60,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
         </div>
 
         {/* Right: GIGW 3.0 Accessibility Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-3 ml-auto shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2.5 ml-auto shrink-0">
           {/* Skip to Main Content (Screen Reader) */}
           <a
             href="#main-content"
@@ -70,10 +70,10 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           </a>
 
           {/* Font Resizing Controls (A- | A | A+) */}
-          <div className="flex items-center bg-[#07132B] border border-white/20 rounded px-1 py-0.5" role="group" aria-label="Text Size Controls">
+          <div className="flex items-center bg-[#07132B] border border-white/20 rounded px-0.5 sm:px-1 py-0.5" role="group" aria-label="Text Size Controls">
             <button
               onClick={() => setFontSize('sm')}
-              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'sm' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1 sm:px-1.5 py-0.5 rounded text-[11px] sm:text-xs transition-colors ${fontSize === 'sm' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Decrease Font Size"
               aria-label="Decrease Font Size"
             >
@@ -81,7 +81,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => setFontSize('md')}
-              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'md' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1 sm:px-1.5 py-0.5 rounded text-[11px] sm:text-xs transition-colors ${fontSize === 'md' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Standard Font Size"
               aria-label="Standard Font Size"
             >
@@ -89,7 +89,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => setFontSize('lg')}
-              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'lg' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1 sm:px-1.5 py-0.5 rounded text-[11px] sm:text-xs transition-colors ${fontSize === 'lg' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Increase Font Size"
               aria-label="Increase Font Size"
             >
@@ -100,7 +100,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           {/* High Contrast Accessibility Mode */}
           <button
             onClick={() => setIsHighContrast(!isHighContrast)}
-            className={`px-2 py-0.5 rounded border text-xs font-medium transition-all ${
+            className={`px-1.5 sm:px-2 py-0.5 rounded border text-[11px] sm:text-xs font-medium transition-all ${
               isHighContrast
                 ? 'bg-yellow-400 text-black border-yellow-300 font-bold'
                 : 'border-white/20 text-[#A3B3C2] hover:border-[#D4AF37] hover:text-white'
@@ -115,7 +115,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           <div className="flex items-center bg-[#07132B] border border-white/20 rounded overflow-hidden">
             <button
               onClick={() => onLanguageToggle('hi')}
-              className={`px-2.5 py-0.5 text-xs font-semibold transition-colors ${
+              className={`px-2 sm:px-2.5 py-0.5 text-[11px] sm:text-xs font-semibold transition-colors ${
                 language === 'hi' ? 'bg-[#C83A22] text-white font-bold' : 'text-[#A3B3C2] hover:text-white'
               }`}
             >
@@ -123,7 +123,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => onLanguageToggle('en')}
-              className={`px-2.5 py-0.5 text-xs font-semibold transition-colors ${
+              className={`px-2 sm:px-2.5 py-0.5 text-[11px] sm:text-xs font-semibold transition-colors ${
                 language === 'en' ? 'bg-[#C83A22] text-white font-bold' : 'text-[#A3B3C2] hover:text-white'
               }`}
             >
