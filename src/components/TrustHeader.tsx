@@ -41,11 +41,11 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             <span className="w-1.5 bg-[#138808]"></span>
           </div>
 
-          <div className="flex items-center gap-1.5 font-medium text-[11px] sm:text-xs">
+          <div className="flex items-center gap-1.5 font-medium text-xs">
             <span className="text-[#E2C365] font-semibold hidden sm:inline">
               {language === 'hi' ? 'पंजीकृत ट्रस्ट:' : 'Regd. Trust:'}
             </span>
-            <span className="text-white font-mono text-[10.5px] sm:text-xs tracking-tight sm:tracking-normal">
+            <span className="text-white font-mono text-xs tracking-tight sm:tracking-normal font-semibold">
               {SITE_CONFIG.trust.registrationNo}
             </span>
             <span className="text-white/30 hidden lg:inline">|</span>
@@ -73,7 +73,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           <div className="flex items-center bg-[#07132B] border border-white/20 rounded px-1 py-0.5" role="group" aria-label="Text Size Controls">
             <button
               onClick={() => setFontSize('sm')}
-              className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${fontSize === 'sm' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'sm' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Decrease Font Size"
               aria-label="Decrease Font Size"
             >
@@ -81,7 +81,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => setFontSize('md')}
-              className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${fontSize === 'md' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'md' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Standard Font Size"
               aria-label="Standard Font Size"
             >
@@ -89,7 +89,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => setFontSize('lg')}
-              className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${fontSize === 'lg' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
+              className={`px-1.5 py-0.5 rounded text-xs transition-colors ${fontSize === 'lg' ? 'bg-[#D4AF37] text-black font-bold' : 'text-[#A3B3C2] hover:text-white'}`}
               title="Increase Font Size"
               aria-label="Increase Font Size"
             >
@@ -100,7 +100,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           {/* High Contrast Accessibility Mode */}
           <button
             onClick={() => setIsHighContrast(!isHighContrast)}
-            className={`px-2 py-0.5 rounded border text-[10px] font-medium transition-all ${
+            className={`px-2 py-0.5 rounded border text-xs font-medium transition-all ${
               isHighContrast
                 ? 'bg-yellow-400 text-black border-yellow-300 font-bold'
                 : 'border-white/20 text-[#A3B3C2] hover:border-[#D4AF37] hover:text-white'
@@ -115,7 +115,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
           <div className="flex items-center bg-[#07132B] border border-white/20 rounded overflow-hidden">
             <button
               onClick={() => onLanguageToggle('hi')}
-              className={`px-2 py-0.5 text-xs transition-colors ${
+              className={`px-2.5 py-0.5 text-xs font-semibold transition-colors ${
                 language === 'hi' ? 'bg-[#C83A22] text-white font-bold' : 'text-[#A3B3C2] hover:text-white'
               }`}
             >
@@ -123,7 +123,7 @@ export function TrustHeader({ language, onLanguageToggle }: TrustHeaderProps) {
             </button>
             <button
               onClick={() => onLanguageToggle('en')}
-              className={`px-2 py-0.5 text-xs transition-colors ${
+              className={`px-2.5 py-0.5 text-xs font-semibold transition-colors ${
                 language === 'en' ? 'bg-[#C83A22] text-white font-bold' : 'text-[#A3B3C2] hover:text-white'
               }`}
             >

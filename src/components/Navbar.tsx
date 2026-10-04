@@ -54,10 +54,10 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold font-serif text-[#161A22] tracking-tight group-hover:text-[#B8860B] transition-colors leading-tight">
+              <span className="text-lg sm:text-xl font-bold font-serif text-[#161A22] tracking-tight group-hover:text-[#B8860B] transition-colors leading-tight">
                 {language === 'hi' ? 'श्री त्रिनेत्र महाकाल मंदिर' : 'Shri Trinetra Mahakal'}
               </span>
-              <span className="text-[10px] sm:text-[11px] text-[#8B5A00] font-semibold tracking-wider uppercase">
+              <span className="text-xs sm:text-xs text-[#8B5A00] font-semibold tracking-wide uppercase">
                 {language === 'hi' ? 'धर्मार्थ सेवा एवं वैदिक यज्ञशाला' : 'Mandir Sanctuary & Reg. NGO'}
               </span>
             </div>
@@ -69,7 +69,7 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
               <button
                 key={link.action}
                 onClick={() => handleNavAction(link.action)}
-                className="text-xs font-semibold text-[#3D4350] hover:text-[#B8860B] transition-colors tracking-wide py-1 border-b-2 border-transparent hover:border-[#B8860B] cursor-pointer"
+                className="text-xs sm:text-sm font-semibold text-[#3D4350] hover:text-[#B8860B] transition-colors tracking-wide py-1 border-b-2 border-transparent hover:border-[#B8860B] cursor-pointer"
               >
                 {language === 'hi' ? link.hi : link.en}
               </button>
@@ -80,7 +80,7 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
           <div className="flex items-center gap-2.5">
             <button
               onClick={() => onOpenDonateModal('shila')}
-              className="hidden sm:flex px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs uppercase tracking-wider border border-[#B8860B]/40 shadow-md hover:shadow-[#C83A22]/20 transition-all active:scale-[0.98] cursor-pointer"
+              className="hidden sm:flex px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] hover:from-[#D43F24] hover:to-[#B32412] text-white font-bold text-xs sm:text-sm uppercase tracking-wider border border-[#B8860B]/40 shadow-md hover:shadow-[#C83A22]/20 transition-all active:scale-[0.98] cursor-pointer"
             >
               {language === 'hi' ? 'शिला दान / सेवा करें' : 'Sponsor Shila / Seva'}
             </button>
@@ -88,11 +88,11 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden w-10 h-10 rounded-lg text-[#3D4350] hover:text-[#161A22] hover:bg-[#F4EFE6] border border-[#B8860B]/35 flex items-center justify-center cursor-pointer shadow-xs"
+              className="lg:hidden w-11 h-11 rounded-lg text-[#3D4350] hover:text-[#161A22] hover:bg-[#F4EFE6] border border-[#B8860B]/35 flex items-center justify-center cursor-pointer shadow-xs"
               aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -111,7 +111,7 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
             <button
               key={link.action}
               onClick={() => handleNavAction(link.action)}
-              className="block w-full text-left py-2.5 text-sm font-semibold text-[#161A22] hover:text-[#8B5A00] border-b border-gray-200"
+              className="block w-full text-left py-2.5 text-sm font-bold text-[#161A22] hover:text-[#8B5A00] border-b border-gray-200"
             >
               {language === 'hi' ? link.hi : link.en}
             </button>
@@ -124,7 +124,7 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenDonateModal('shila');
               }}
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] text-white font-bold text-xs uppercase tracking-wider border border-[#B8860B]/40 shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] text-white font-bold text-sm uppercase tracking-wider border border-[#B8860B]/40 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]"
             >
               <span>🪨</span>
               <span>{language === 'hi' ? 'शिला दान / निर्माण सहयोग' : 'Sponsor Shila / Seva'}</span>
@@ -137,7 +137,7 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
               className="text-xs text-[#8B5A00] flex items-center gap-2 py-1 font-semibold"
             >
               <span>📞 {language === 'hi' ? 'आचार्य हेल्पलाइन:' : 'Acharya Helpline:'}</span>
-              <strong className="text-[#161A22]">{SITE_CONFIG.contact.acharyaHelpline}</strong>
+              <strong className="text-[#161A22] font-mono text-sm">{SITE_CONFIG.contact.acharyaHelpline}</strong>
             </a>
           </div>
         </div>

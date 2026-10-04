@@ -253,54 +253,54 @@ and supreme prosperity upon your family.
                     className="w-9 h-9 rounded-full object-contain border border-[#B8860B]/40 bg-white p-0.5"
                   />
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider font-bold text-[#8B5A00] block">
+                    <span className="text-xs uppercase tracking-wider font-bold text-[#8B5A00] block">
                       {SITE_CONFIG.trust.registeredName}
                     </span>
-                    <span className="text-xs font-serif font-bold text-[#161A22]">
+                    <span className="text-xs sm:text-sm font-serif font-bold text-[#161A22]">
                       80G PROVISIONAL TAX EXEMPTION CERTIFICATE
                     </span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] text-[#5C5549] block">Receipt ID</span>
-                  <span className="text-xs font-mono font-bold text-[#046A38]">{generatedReceiptNo}</span>
+                  <span className="text-xs text-[#5C5549] block font-medium">Receipt ID</span>
+                  <span className="text-xs sm:text-sm font-mono font-bold text-[#046A38]">{generatedReceiptNo}</span>
                 </div>
               </div>
 
               {/* Devotee & Transaction Details Grid */}
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-2 gap-3.5 text-xs sm:text-sm">
                 <div>
-                  <span className="text-[#5C5549] text-[11px] block">Devotee / Yajman:</span>
-                  <span className="text-[#161A22] font-semibold">{donorName || 'Shri Devotee'}</span>
+                  <span className="text-[#5C5549] text-xs block font-medium">Devotee / Yajman:</span>
+                  <span className="text-[#161A22] font-semibold text-sm">{donorName || 'Shri Devotee'}</span>
                 </div>
                 <div>
-                  <span className="text-[#5C5549] text-[11px] block">Family Gotra:</span>
-                  <span className="text-[#8B5A00] font-semibold">{donorGotra || 'Kashyapa / Gotra'}</span>
+                  <span className="text-[#5C5549] text-xs block font-medium">Family Gotra:</span>
+                  <span className="text-[#8B5A00] font-semibold text-sm">{donorGotra || 'Kashyapa / Gotra'}</span>
                 </div>
                 <div>
-                  <span className="text-[#5C5549] text-[11px] block">PAN Number:</span>
-                  <span className="text-[#161A22] font-mono font-semibold">{donorPan || 'NOT PROVIDED'}</span>
+                  <span className="text-[#5C5549] text-xs block font-medium">PAN Number:</span>
+                  <span className="text-[#161A22] font-mono font-semibold text-sm">{donorPan || 'NOT PROVIDED'}</span>
                 </div>
                 <div>
-                  <span className="text-[#5C5549] text-[11px] block">Mobile / WhatsApp:</span>
-                  <span className="text-[#161A22] font-mono">{donorPhone || 'N/A'}</span>
+                  <span className="text-[#5C5549] text-xs block font-medium">Mobile / WhatsApp:</span>
+                  <span className="text-[#161A22] font-mono text-sm">{donorPhone || 'N/A'}</span>
                 </div>
-                <div className="col-span-2 bg-[#FAF8F2] p-2.5 rounded-lg border border-[#E0D9CC] flex justify-between items-center">
+                <div className="col-span-2 bg-[#FAF8F2] p-3 rounded-lg border border-[#E0D9CC] flex justify-between items-center">
                   <div>
-                    <span className="text-[10px] text-[#5C5549] uppercase block">Consecrated Seva:</span>
-                    <span className="text-xs font-bold text-[#161A22]">{currentSevaTitle}</span>
+                    <span className="text-xs text-[#5C5549] uppercase block font-medium">Consecrated Seva:</span>
+                    <span className="text-sm font-bold text-[#161A22]">{currentSevaTitle}</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-[10px] text-[#5C5549] uppercase block">Amount:</span>
-                    <span className="text-base font-bold text-[#046A38]">₹{amount.toLocaleString('en-IN')}</span>
+                    <span className="text-xs text-[#5C5549] uppercase block font-medium">Amount:</span>
+                    <span className="text-lg font-bold text-[#046A38]">₹{amount.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
 
               {/* Statutory Compliance Footer */}
-              <div className="pt-2 border-t border-gray-200 flex flex-wrap justify-between items-center gap-2 text-[10px] text-[#5C5549]">
+              <div className="pt-2.5 border-t border-gray-200 flex flex-wrap justify-between items-center gap-2 text-xs text-[#5C5549]">
                 <span>Trust Reg: {SITE_CONFIG.trust.registrationNo}</span>
-                <span className="text-[#046A38] font-semibold">✓ 50% Tax Exempt under Sec 80G</span>
+                <span className="text-[#046A38] font-bold">✓ 50% Tax Exempt under Sec 80G</span>
               </div>
             </div>
 
@@ -308,14 +308,14 @@ and supreme prosperity upon your family.
             <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
               <button
                 onClick={handleDownloadReceipt}
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#8E7322] hover:brightness-105 text-[#161A22] font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
+                className="px-7 py-3.5 rounded-lg bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#8E7322] hover:brightness-105 text-[#161A22] font-bold text-sm uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
               >
                 <span>📥</span>
                 <span>{language === 'hi' ? '८०जी रसीद डाउनलोड करें' : 'Download 80G Receipt'}</span>
               </button>
               <button
                 onClick={onClose}
-                className="px-6 py-3 rounded-lg bg-white border border-[#B8860B]/40 text-[#5C5549] hover:text-[#161A22] hover:bg-[#F4EFE6] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
+                className="px-6 py-3.5 rounded-lg bg-white border border-[#B8860B]/40 text-[#5C5549] hover:text-[#161A22] hover:bg-[#F4EFE6] text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
               >
                 {language === 'hi' ? 'मंदिर पृष्ठ पर वापस जाएं' : 'Return to Sanctuary'}
               </button>
@@ -327,14 +327,14 @@ and supreme prosperity upon your family.
             {/* Modal Header & Trust Badge */}
             <div className="border-b border-gray-200 pb-4">
               <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#046A38]/10 border border-[#046A38]/30 text-[#046A38] text-[10px] font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#046A38]/10 border border-[#046A38]/30 text-[#046A38] text-xs font-bold uppercase tracking-wider">
                   ✓ Section 80G Tax Exempt
                 </span>
-                <span className="text-[11px] text-[#8B5A00] font-serif font-semibold">
+                <span className="text-xs sm:text-sm text-[#8B5A00] font-serif font-semibold">
                   {SITE_CONFIG.trust.registeredName}
                 </span>
               </div>
-              <h3 id="donation-modal-title" className="text-xl sm:text-2xl font-serif font-bold text-[#161A22]">
+              <h3 id="donation-modal-title" className="text-2xl sm:text-3xl font-serif font-bold text-[#161A22]">
                 {language === 'hi'
                   ? 'पावन मंदिर निर्माण एवं धर्मार्थ सेवा संकल्प'
                   : 'Mandir Nirman & Seva Contribution'}
@@ -344,23 +344,23 @@ and supreme prosperity upon your family.
             {/* Active Seva Highlight Banner */}
             <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#FFFDF9] via-[#FAF8F2] to-[#F5EFE4] border border-[#B8860B]/35 flex flex-wrap items-center justify-between gap-3 shadow-xs">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white border border-[#B8860B]/40 flex items-center justify-center text-xl shadow-xs shrink-0">
+                <div className="w-11 h-11 rounded-lg bg-white border border-[#B8860B]/40 flex items-center justify-center text-2xl shadow-xs shrink-0">
                   {matchedItemized ? '🪨' : matchedNgo ? '🍲' : '🔱'}
                 </div>
                 <div>
-                  <span className="text-[10px] text-[#8B5A00] uppercase tracking-wider font-bold block">
+                  <span className="text-xs text-[#8B5A00] uppercase tracking-wider font-bold block">
                     {language === 'hi' ? 'चयनित पावन सेवा:' : 'Selected Seva:'}
                   </span>
-                  <h4 className="text-sm font-serif font-bold text-[#161A22]">
+                  <h4 className="text-base font-serif font-bold text-[#161A22]">
                     {currentSevaTitle}
                   </h4>
                 </div>
               </div>
               <div className="text-right ml-auto sm:ml-0">
-                <span className="text-[10px] text-[#5C5549] uppercase block font-medium">
+                <span className="text-xs text-[#5C5549] uppercase block font-medium">
                   {language === 'hi' ? 'संकल्प राशि' : 'Seva Amount'}
                 </span>
-                <span className="text-base font-serif font-bold text-[#8B5A00]">
+                <span className="text-lg font-serif font-bold text-[#8B5A00]">
                   ₹{amount.toLocaleString('en-IN')}
                 </span>
               </div>
@@ -368,7 +368,7 @@ and supreme prosperity upon your family.
 
             {/* Seva Amount Picker & Custom Amount Field */}
             <div className="space-y-3">
-              <label className="block text-xs font-semibold text-[#161A22]">
+              <label className="block text-xs sm:text-sm font-bold text-[#161A22]">
                 {language === 'hi' ? 'सेवा राशि चुनें अथवा अपनी इच्छा अनुसार दर्ज करें:' : 'Choose or Enter Seva Devotion Amount (₹):'}
               </label>
 
@@ -381,7 +381,7 @@ and supreme prosperity upon your family.
                       key={amt}
                       type="button"
                       onClick={() => handleAmountSelect(amt)}
-                      className={`py-2 px-1 rounded-lg text-xs font-bold transition-all border flex flex-col items-center justify-center cursor-pointer ${
+                      className={`py-2.5 px-1 rounded-lg text-sm font-bold transition-all border flex flex-col items-center justify-center cursor-pointer ${
                         isSelected
                           ? 'bg-gradient-to-b from-[#C83A22] to-[#961F0F] text-white border-[#B8860B] shadow-md ring-1 ring-[#B8860B]/50 scale-[1.02]'
                           : 'bg-white text-[#5C5549] border-[#E0D9CC] hover:border-[#B8860B]/60 hover:text-[#161A22] shadow-xs'
@@ -407,7 +407,7 @@ and supreme prosperity upon your family.
                     value={customAmountStr}
                     onChange={handleCustomAmountChange}
                     placeholder="Enter custom devotion amount"
-                    className="w-full pl-8 pr-4 py-2.5 rounded-lg bg-white border border-[#B8860B]/35 text-sm text-[#161A22] font-mono font-bold focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B] transition-all shadow-xs"
+                    className="w-full pl-8 pr-4 py-2.5 rounded-lg bg-white border border-[#B8860B]/35 text-base text-[#161A22] font-mono font-bold focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B] transition-all shadow-xs"
                   />
                 </div>
 
@@ -416,21 +416,21 @@ and supreme prosperity upon your family.
                   <button
                     type="button"
                     onClick={() => handleAddAmount(500)}
-                    className="px-2.5 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs font-semibold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
+                    className="px-3 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs sm:text-sm font-bold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
                   >
                     +₹500
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddAmount(1000)}
-                    className="px-2.5 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs font-semibold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
+                    className="px-3 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs sm:text-sm font-bold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
                   >
                     +₹1,000
                   </button>
                   <button
                     type="button"
                     onClick={() => handleAddAmount(5000)}
-                    className="px-2.5 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs font-semibold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
+                    className="px-3 py-2 rounded-lg bg-white hover:bg-[#F5EFE4] text-[#8B5A00] text-xs sm:text-sm font-bold border border-[#B8860B]/30 transition-colors shadow-xs cursor-pointer"
                   >
                     +₹5,000
                   </button>
@@ -443,7 +443,7 @@ and supreme prosperity upon your family.
               <button
                 type="button"
                 onClick={() => setActiveTab('upi_qr')}
-                className={`py-2.5 px-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                className={`py-2.5 px-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                   activeTab === 'upi_qr'
                     ? 'bg-white text-[#8B5A00] shadow-sm border border-[#B8860B]/40'
                     : 'text-[#5C5549] hover:text-[#161A22]'
@@ -455,7 +455,7 @@ and supreme prosperity upon your family.
               <button
                 type="button"
                 onClick={() => setActiveTab('razorpay')}
-                className={`py-2.5 px-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                className={`py-2.5 px-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                   activeTab === 'razorpay'
                     ? 'bg-white text-[#8B5A00] shadow-sm border border-[#B8860B]/40'
                     : 'text-[#5C5549] hover:text-[#161A22]'
@@ -472,11 +472,11 @@ and supreme prosperity upon your family.
                 {/* Step 1: QR & Bank Card */}
                 <div className="p-4 sm:p-5 rounded-xl bg-white border border-[#B8860B]/25 shadow-xs space-y-4">
                   <div className="flex items-center justify-between border-b border-gray-200 pb-2.5">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#8B5A00] flex items-center gap-1.5">
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#8B5A00] flex items-center gap-1.5">
                       <span>🔱</span>
                       <span>{language === 'hi' ? 'चरण १: क्यूआर स्कैन करें या बैंक में ट्रांसफर करें' : 'Step 1: Scan & Pay with Any UPI App'}</span>
                     </span>
-                    <span className="text-[11px] text-[#046A38] font-semibold">
+                    <span className="text-xs font-bold text-[#046A38]">
                       0% Gateway Fee
                     </span>
                   </div>
@@ -503,13 +503,13 @@ and supreme prosperity upon your family.
                       </div>
 
                       <div className="w-full text-center mt-2 pt-1.5 border-t border-gray-200">
-                        <span className="text-[11px] text-[#161A22] font-bold block">
+                        <span className="text-sm text-[#161A22] font-bold block">
                           ₹{amount.toLocaleString('en-IN')}
                         </span>
-                        <span className="text-[9px] text-[#5C5549] font-medium">
+                        <span className="text-xs text-[#5C5549] font-medium">
                           {SITE_CONFIG.payment.accountName}
                         </span>
-                        <span className="text-[9px] text-[#046A38] font-semibold block">
+                        <span className="text-xs text-[#046A38] font-semibold block">
                           Verified PNB Merchant • 0% Fee
                         </span>
                       </div>
@@ -517,7 +517,7 @@ and supreme prosperity upon your family.
                       {/* Mobile Deep-Link Trigger */}
                       <a
                         href={upiUrl}
-                        className="mt-2.5 w-full py-1.5 px-2 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] text-white text-[11px] font-bold text-center transition-colors flex items-center justify-center gap-1 sm:hidden shadow-xs"
+                        className="mt-2.5 w-full py-2 px-2 rounded-lg bg-gradient-to-r from-[#C83A22] to-[#A01808] text-white text-xs font-bold text-center transition-colors flex items-center justify-center gap-1 sm:hidden shadow-xs"
                       >
                         <span>⚡</span>
                         <span>Open in UPI App</span>
@@ -525,15 +525,15 @@ and supreme prosperity upon your family.
                     </div>
 
                     {/* Right: Bank Details with 1-Click Copy */}
-                    <div className="sm:col-span-7 space-y-2.5 text-xs">
+                    <div className="sm:col-span-7 space-y-3 text-xs sm:text-sm">
                       <div>
-                        <span className="text-[#5C5549] text-[11px] font-medium block mb-1">Official Mandir UPI ID:</span>
-                        <div className="flex items-center justify-between font-mono font-bold text-[#161A22] bg-[#FAF8F2] px-3 py-2 rounded-lg border border-[#E0D9CC]">
-                          <span className="text-xs sm:text-sm text-[#8B5A00]">{SITE_CONFIG.payment.upiId}</span>
+                        <span className="text-[#5C5549] text-xs font-medium block mb-1">Official Mandir UPI ID:</span>
+                        <div className="flex items-center justify-between font-mono font-bold text-[#161A22] bg-[#FAF8F2] px-3.5 py-2.5 rounded-lg border border-[#E0D9CC]">
+                          <span className="text-sm sm:text-base text-[#8B5A00]">{SITE_CONFIG.payment.upiId}</span>
                           <button
                             type="button"
                             onClick={() => handleCopy(SITE_CONFIG.payment.upiId, 'upi')}
-                            className="px-2.5 py-1 rounded bg-white border border-[#B8860B]/40 text-[#8B5A00] hover:bg-[#8B5A00] hover:text-white font-bold text-[11px] transition-all cursor-pointer shadow-xs"
+                            className="px-3 py-1 rounded bg-white border border-[#B8860B]/40 text-[#8B5A00] hover:bg-[#8B5A00] hover:text-white font-bold text-xs transition-all cursor-pointer shadow-xs"
                           >
                             {copiedField === 'upi' ? 'Copied! ✓' : 'Copy UPI'}
                           </button>
@@ -541,33 +541,33 @@ and supreme prosperity upon your family.
                       </div>
 
                       <div>
-                        <span className="text-[#5C5549] text-[11px] font-medium block mb-1">
+                        <span className="text-[#5C5549] text-xs font-medium block mb-1">
                           {SITE_CONFIG.payment.bankName} (PNB) Account:
                         </span>
-                        <div className="flex items-center justify-between font-mono font-bold text-[#161A22] bg-[#FAF8F2] px-3 py-2 rounded-lg border border-[#E0D9CC]">
-                          <span className="text-xs sm:text-sm">{SITE_CONFIG.payment.accountNumber}</span>
+                        <div className="flex items-center justify-between font-mono font-bold text-[#161A22] bg-[#FAF8F2] px-3.5 py-2.5 rounded-lg border border-[#E0D9CC]">
+                          <span className="text-sm sm:text-base">{SITE_CONFIG.payment.accountNumber}</span>
                           <button
                             type="button"
                             onClick={() => handleCopy(SITE_CONFIG.payment.accountNumber, 'acc')}
-                            className="px-2.5 py-1 rounded bg-white border border-[#B8860B]/40 text-[#8B5A00] hover:bg-[#8B5A00] hover:text-white font-bold text-[11px] transition-all cursor-pointer shadow-xs"
+                            className="px-3 py-1 rounded bg-white border border-[#B8860B]/40 text-[#8B5A00] hover:bg-[#8B5A00] hover:text-white font-bold text-xs transition-all cursor-pointer shadow-xs"
                           >
                             {copiedField === 'acc' ? 'Copied! ✓' : 'Copy Acc'}
                           </button>
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-2 bg-[#FAF8F2] p-2.5 rounded-lg border border-[#E0D9CC] text-[11px]">
+                      <div className="grid grid-cols-2 gap-2 bg-[#FAF8F2] p-2.5 rounded-lg border border-[#E0D9CC] text-xs">
                         <div>
                           <span className="text-[#5C5549] block">IFSC Code:</span>
-                          <span className="font-mono font-bold text-[#161A22]">{SITE_CONFIG.payment.ifscCode}</span>
+                          <span className="font-mono font-bold text-[#161A22] text-xs sm:text-sm">{SITE_CONFIG.payment.ifscCode}</span>
                         </div>
                         <div>
                           <span className="text-[#5C5549] block">Account Type:</span>
-                          <span className="font-semibold text-[#161A22]">Charitable Trust</span>
+                          <span className="font-semibold text-[#161A22] text-xs sm:text-sm">Charitable Trust</span>
                         </div>
                         <div className="col-span-2 pt-1 border-t border-gray-200">
-                          <span className="text-[#5C5549] block text-[10px]">Beneficiary Name:</span>
-                          <span className="font-semibold text-[#8B5A00] truncate block">{SITE_CONFIG.payment.accountName}</span>
+                          <span className="text-[#5C5549] block text-xs">Beneficiary Name:</span>
+                          <span className="font-bold text-[#8B5A00] text-xs sm:text-sm truncate block">{SITE_CONFIG.payment.accountName}</span>
                         </div>
                       </div>
                     </div>
@@ -577,11 +577,11 @@ and supreme prosperity upon your family.
                 {/* Step 2: 60-Second UTR Verification & 80G Form */}
                 <form onSubmit={handleProofSubmit} className="p-4 sm:p-5 rounded-xl bg-white border border-[#B8860B]/30 shadow-xs space-y-4">
                   <div className="border-b border-gray-200 pb-2.5">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#046A38] flex items-center gap-1.5">
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#046A38] flex items-center gap-1.5">
                       <span>📝</span>
                       <span>{language === 'hi' ? 'चरण २: ८०जी रसीद हेतु UTR संदर्भ एवं यजमान विवरण दर्ज करें' : 'Step 2: Submit UTR Reference for 80G Receipt'}</span>
                     </span>
-                    <p className="text-[11px] text-[#5C5549] mt-1 font-medium">
+                    <p className="text-xs text-[#5C5549] mt-1 font-medium leading-relaxed">
                       {language === 'hi'
                         ? 'भुगतान पश्चात अपने यूपीआई / बैंक ऐप में प्रदर्शित १२-अंकीय UTR नंबर यहां दर्ज करें।'
                         : 'Enter the 12-digit UTR / UPI Reference ID from your payment confirmation to generate your instant 80G tax receipt.'}
@@ -590,7 +590,7 @@ and supreme prosperity upon your family.
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] text-[#5C5549] font-medium mb-1">
+                      <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">
                         {language === 'hi' ? 'यजमान / भक्त का पूरा नाम *' : 'Devotee Full Name *'}
                       </label>
                       <input
@@ -599,12 +599,12 @@ and supreme prosperity upon your family.
                         placeholder="e.g. Ramesh Kumar Sharma"
                         value={donorName}
                         onChange={(e) => setDonorName(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] text-[#5C5549] font-medium mb-1">
+                      <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">
                         {language === 'hi' ? 'मोबाइल / व्हाट्सएप नंबर *' : 'Mobile / WhatsApp Number *'}
                       </label>
                       <input
@@ -613,12 +613,12 @@ and supreme prosperity upon your family.
                         placeholder="e.g. 9876543210"
                         value={donorPhone}
                         onChange={(e) => setDonorPhone(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] text-[#5C5549] font-medium mb-1">
+                      <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">
                         {language === 'hi' ? 'गोत्र (शिला / संकल्प हेतु - ऐच्छिक)' : 'Family Gotra (Optional for Sankalpa)'}
                       </label>
                       <input
@@ -626,12 +626,12 @@ and supreme prosperity upon your family.
                         placeholder="e.g. Kashyapa / Vashistha"
                         value={donorGotra}
                         onChange={(e) => setDonorGotra(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] text-[#5C5549] font-medium mb-1">
+                      <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">
                         {language === 'hi' ? 'पैन कार्ड नंबर (८०जी कर छूट हेतु - ऐच्छिक)' : 'PAN Number (Optional, for 80G Tax Deduction)'}
                       </label>
                       <input
@@ -640,12 +640,12 @@ and supreme prosperity upon your family.
                         placeholder="e.g. ABCDE1234F"
                         value={donorPan}
                         onChange={(e) => setDonorPan(e.target.value.toUpperCase())}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] font-mono uppercase placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] font-mono uppercase placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
                       />
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-[11px] text-[#8B5A00] font-bold mb-1">
+                      <label className="block text-xs sm:text-sm text-[#8B5A00] font-bold mb-1">
                         {language === 'hi' ? '१२-अंकीय बैंक UTR / UPI संदर्भ संख्या *' : '12-Digit Bank UTR / UPI Reference Number *'}
                       </label>
                       <input
@@ -655,14 +655,14 @@ and supreme prosperity upon your family.
                         placeholder="e.g. 423981298412"
                         value={utrNumber}
                         onChange={(e) => setUtrNumber(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#B8860B]/50 text-xs text-[#161A22] font-mono placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#B8860B]/50 text-sm text-[#161A22] font-mono font-semibold placeholder-[#8A8477] focus:bg-white focus:outline-none focus:border-[#B8860B] focus:ring-1 focus:ring-[#B8860B]"
                       />
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-lg bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-white font-bold text-xs uppercase tracking-wider shadow-md border border-[#B8860B]/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
+                    className="w-full py-3.5 rounded-lg bg-gradient-to-r from-[#C83A22] via-[#B32412] to-[#8E1C0E] hover:from-[#D63E26] hover:to-[#9E2010] text-white font-bold text-sm uppercase tracking-wider shadow-md border border-[#B8860B]/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
                   >
                     <span>✨</span>
                     <span>{language === 'hi' ? 'सत्यापित करें एवं ८०जी रसीद प्राप्त करें' : 'Verify & Generate 80G Tax Receipt'}</span>
@@ -676,67 +676,67 @@ and supreme prosperity upon your family.
                   🔒
                 </div>
                 <div>
-                  <h4 className="text-base font-serif font-bold text-[#161A22]">
+                  <h4 className="text-base sm:text-lg font-serif font-bold text-[#161A22]">
                     Razorpay Zero-Trust Payment Rail
                   </h4>
-                  <p className="text-xs text-[#5C5549] max-w-md mx-auto mt-1 leading-relaxed font-medium">
+                  <p className="text-xs sm:text-sm text-[#5C5549] max-w-md mx-auto mt-1 leading-relaxed font-medium">
                     Instant automated devotion via Debit Cards, Credit Cards, 50+ NetBanking banks, RuPay, and International cards.
                   </p>
                 </div>
 
                 {/* Quick Devotee Inputs for Razorpay Receipt */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left max-w-lg mx-auto">
                   <div>
-                    <label className="block text-[11px] text-[#5C5549] font-medium mb-1">Your Full Name *</label>
+                    <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">Your Full Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="Devotee Name"
                       value={donorName}
                       onChange={(e) => setDonorName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] text-[#5C5549] font-medium mb-1">Mobile / WhatsApp *</label>
+                    <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">Mobile / WhatsApp *</label>
                     <input
                       type="tel"
                       required
                       placeholder="Mobile Number"
                       value={donorPhone}
                       onChange={(e) => setDonorPhone(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] text-[#5C5549] font-medium mb-1">Email (For Receipt)</label>
+                    <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">Email (For Receipt)</label>
                     <input
                       type="email"
                       placeholder="devotee@example.com"
                       value={donorEmail}
                       onChange={(e) => setDonorEmail(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] focus:bg-white focus:outline-none focus:border-[#B8860B]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] text-[#5C5549] font-medium mb-1">PAN (Optional for 80G)</label>
+                    <label className="block text-xs sm:text-sm text-[#4A453C] font-semibold mb-1">PAN (Optional for 80G)</label>
                     <input
                       type="text"
                       maxLength={10}
                       placeholder="ABCDE1234F"
                       value={donorPan}
                       onChange={(e) => setDonorPan(e.target.value.toUpperCase())}
-                      className="w-full px-3 py-2 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-xs text-[#161A22] font-mono uppercase focus:bg-white focus:outline-none focus:border-[#B8860B]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F2] border border-[#D5CEBF] text-sm text-[#161A22] font-mono uppercase focus:bg-white focus:outline-none focus:border-[#B8860B]"
                     />
                   </div>
                 </div>
 
-                <div className="p-3 bg-[#FAF8F2] rounded-lg border border-[#E0D9CC] max-w-lg mx-auto flex justify-between items-center text-xs">
+                <div className="p-3 bg-[#FAF8F2] rounded-lg border border-[#E0D9CC] max-w-lg mx-auto flex justify-between items-center text-xs sm:text-sm">
                   <span className="text-[#5C5549] font-medium">Total Devotion Amount:</span>
-                  <span className="text-base font-bold text-[#8B5A00] font-serif">₹{amount.toLocaleString('en-IN')}</span>
+                  <span className="text-base sm:text-lg font-bold text-[#8B5A00] font-serif">₹{amount.toLocaleString('en-IN')}</span>
                 </div>
 
-                <div className="flex justify-center gap-2 text-[10px] text-[#5C5549]">
+                <div className="flex justify-center gap-2 text-xs text-[#5C5549] font-medium">
                   <span>💳 RuPay</span>
                   <span>•</span>
                   <span>Visa / MasterCard</span>
@@ -748,7 +748,7 @@ and supreme prosperity upon your family.
 
                 <button
                   type="submit"
-                  className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#0052CC] to-[#003B99] hover:from-[#0065FF] hover:to-[#0052CC] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all active:scale-[0.98] cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#0052CC] to-[#003B99] hover:from-[#0065FF] hover:to-[#0052CC] text-white font-bold text-sm uppercase tracking-wider shadow-md transition-all active:scale-[0.98] cursor-pointer"
                 >
                   Proceed to Pay ₹{amount.toLocaleString('en-IN')} with Razorpay
                 </button>

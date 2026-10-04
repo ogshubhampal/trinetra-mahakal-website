@@ -31,13 +31,13 @@ html.high-contrast {
 
 /* Accessibility Font Size Scales */
 html.font-scale-sm {
-  font-size: 14px;
+  font-size: 15px;
 }
 html.font-scale-md {
-  font-size: 16px;
+  font-size: 16.5px;
 }
 html.font-scale-lg {
-  font-size: 18px;
+  font-size: 18.5px;
 }
 
 body {
@@ -46,6 +46,9 @@ body {
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Scrollbar */

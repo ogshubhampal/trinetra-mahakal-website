@@ -1,7 +1,7 @@
 # AGENTS.md - Project Intelligence & Technical Directives: Trinetra Mahakal
 
 > **Project**: Trinetra Mahakal Mandir & Registered Dharmic NGO Digital Sanctuary  
-> **Current Version:** `v1.2.2` (Official Trust Logo extraction and integration across Navbar, metadata, and 80G receipt)  
+> **Current Version:** `v1.2.3` (Mobile typography scale and default font sizing overhaul across Fold 1)  
 > **Last Updated:** `2026-10-04`
 > **Mission**: Sacred Mandir Construction, Vedic Yagya & Tantrik Badha Nivaran, and Humanitarian NGO Seva (Anna Daan, Granth Daan, Shiksha Seva).  
 > **Status**: Bhumi Pujan Completed | Neev (Foundation) Laid | Active Construction & Micro-Donation Phase  

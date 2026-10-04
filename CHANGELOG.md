@@ -5,6 +5,12 @@ Format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and 
 
 ---
 
+## [1.2.3] - 2026-10-04
+### Mobile typography scale and default font sizing overhaul across Fold 1
+- Feature updates, enhancements, and stability improvements.
+
+---
+
 ## [1.2.2] - 2026-10-04
 ### Official Trust Logo extraction and integration across Navbar, metadata, and 80G receipt
 - Feature updates, enhancements, and stability improvements.
