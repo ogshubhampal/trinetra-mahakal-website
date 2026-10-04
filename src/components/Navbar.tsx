@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/config/site';
 
 interface NavbarProps {
@@ -40,31 +41,16 @@ export function Navbar({ language, onOpenDonateModal }: NavbarProps) {
         <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Brand & Sacred Emblem */}
           <a href="#" className="flex items-center gap-3 group">
-            {/* Consecrated Trishul & Trinetra Sovereign Seal */}
-            <div className="relative w-11 h-11 rounded-full bg-gradient-to-b from-[#FFFDF9] to-[#F5EFE4] border-2 border-[#B8860B] flex items-center justify-center shadow-md group-hover:border-[#C83A22] transition-all shrink-0">
-              <svg
-                className="w-7 h-7 text-[#B8860B]"
-                viewBox="0 0 100 100"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                {/* Central Spear */}
-                <path d="M50 14 L50 86" strokeLinecap="round" stroke="#B8860B" strokeWidth="3" />
-                <polygon points="50,8 44,20 56,20" fill="#B8860B" stroke="none" />
-                
-                {/* Crescent Trishul Arms */}
-                <path d="M28 26 C28 50 42 60 50 64 C58 60 72 50 72 26" strokeLinecap="round" stroke="#B8860B" strokeWidth="2.5" />
-                <polygon points="28,20 24,30 32,30" fill="#B8860B" stroke="none" />
-                <polygon points="72,20 68,30 76,30" fill="#B8860B" stroke="none" />
-
-                {/* Damru Motif at Base */}
-                <polygon points="43,66 57,66 43,76 57,76" fill="#B8860B" opacity="0.8" />
-
-                {/* Radiant Third Eye (Trinetra) */}
-                <ellipse cx="50" cy="42" rx="6" ry="9" fill="#C83A22" stroke="#B8860B" strokeWidth="1.5" />
-                <ellipse cx="50" cy="42" rx="2" ry="4" fill="#FFFDF9" stroke="none" />
-              </svg>
+            {/* Consecrated Trinetra Sovereign Seal */}
+            <div className="relative w-11 h-11 rounded-full bg-gradient-to-b from-[#FFFDF9] to-[#F5EFE4] border-2 border-[#B8860B] flex items-center justify-center shadow-md group-hover:border-[#C83A22] transition-all shrink-0 overflow-hidden">
+              <Image
+                src="/images/trinetra-logo.png"
+                alt="श्री त्रिनेत्र महाकाल मंदिर"
+                width={44}
+                height={44}
+                className="w-full h-full object-contain p-0.5 group-hover:scale-105 transition-transform"
+                priority
+              />
             </div>
 
             <div className="flex flex-col">

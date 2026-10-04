@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/config/site';
 import { generateQrMatrix, generateQrSvgPath } from '@/utils/qr';
 
@@ -243,13 +244,22 @@ and supreme prosperity upon your family.
 
               {/* Certificate Header */}
               <div className="flex flex-wrap justify-between items-center border-b border-[#B8860B]/30 pb-3 gap-2">
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-[#8B5A00] block">
-                    {SITE_CONFIG.trust.registeredName}
-                  </span>
-                  <span className="text-xs font-serif font-bold text-[#161A22]">
-                    80G PROVISIONAL TAX EXEMPTION CERTIFICATE
-                  </span>
+                <div className="flex items-center gap-2.5">
+                  <Image
+                    src="/images/trinetra-logo.png"
+                    alt="Trust Seal"
+                    width={36}
+                    height={36}
+                    className="w-9 h-9 rounded-full object-contain border border-[#B8860B]/40 bg-white p-0.5"
+                  />
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-[#8B5A00] block">
+                      {SITE_CONFIG.trust.registeredName}
+                    </span>
+                    <span className="text-xs font-serif font-bold text-[#161A22]">
+                      80G PROVISIONAL TAX EXEMPTION CERTIFICATE
+                    </span>
+                  </div>
                 </div>
                 <div className="text-right">
                   <span className="text-[10px] text-[#5C5549] block">Receipt ID</span>
@@ -481,8 +491,14 @@ and supreme prosperity upon your family.
                           className="w-40 h-40 sm:w-44 sm:h-44 object-contain rounded-md"
                         />
                         {/* Centered Micro Seal */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border border-[#B8860B] flex items-center justify-center text-sm shadow-xs pointer-events-none">
-                          🔱
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-[#B8860B] flex items-center justify-center shadow-xs p-0.5 pointer-events-none overflow-hidden">
+                          <Image
+                            src="/images/trinetra-logo.png"
+                            alt="Trinetra Emblem"
+                            width={32}
+                            height={32}
+                            className="w-full h-full object-contain rounded-full"
+                          />
                         </div>
                       </div>
 

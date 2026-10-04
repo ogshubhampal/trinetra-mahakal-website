@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     'Garbhagriha Construction',
   ],
   authors: [{ name: SITE_CONFIG.trust.registeredName }],
+  icons: {
+    icon: '/images/trinetra-logo.png',
+    apple: '/images/trinetra-logo.png',
+  },
   openGraph: {
     title: `${SITE_CONFIG.name} - Mandir Nirman & Vedic Yagya`,
     description:

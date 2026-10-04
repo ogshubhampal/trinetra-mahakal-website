@@ -5,6 +5,12 @@ Format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and 
 
 ---
 
+## [1.2.2] - 2026-10-04
+### Official Trust Logo extraction and integration across Navbar, metadata, and 80G receipt
+- Feature updates, enhancements, and stability improvements.
+
+---
+
 ## [1.2.1] - 2026-09-20
 ### GovTech 2.0 Luminous Light theme overhaul, mobile typography scaling, zero-collision navbar, and 3D Mandir interactive Seva hotspots
 - Modernized theme to GovTech 2.0 Sovereign Luminous Ivory & Sandstone with accessible WCAG AAA contrast.

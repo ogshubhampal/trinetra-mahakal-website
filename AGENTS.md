@@ -1,8 +1,8 @@
 # AGENTS.md - Project Intelligence & Technical Directives: Trinetra Mahakal
 
 > **Project**: Trinetra Mahakal Mandir & Registered Dharmic NGO Digital Sanctuary  
-> **Current Version:** `v1.2.1` (GovTech 2.0 Luminous Light Overhaul, Mobile Typography Scaling & Interactive Seva Hotspots)  
-> **Last Updated:** `2026-09-20`
+> **Current Version:** `v1.2.2` (Official Trust Logo extraction and integration across Navbar, metadata, and 80G receipt)  
+> **Last Updated:** `2026-10-04`
 > **Mission**: Sacred Mandir Construction, Vedic Yagya & Tantrik Badha Nivaran, and Humanitarian NGO Seva (Anna Daan, Granth Daan, Shiksha Seva).  
 > **Status**: Bhumi Pujan Completed | Neev (Foundation) Laid | Active Construction & Micro-Donation Phase  
 > **Design Vibe**: Sovereign Luminous Teerth Kshetra (Sandstone Ivory `#FAF8F2` + Royal Navy `#0B1B3D` + Temple Brass `#B8860B` + Agni Vermillion `#C83A22`)  
